@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatisticController;
@@ -13,9 +14,17 @@ use App\Http\Controllers\Admin\HomeContentController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
+Route::get('/test-mail', function () {
+    \Illuminate\Support\Facades\Mail::raw('Test Email', function ($msg) {
+        $msg->to('avora.fun.eg@gmail.com')
+            ->subject('Test');
+    });
 
+    return 'sent';
+});
 
 
 Route::middleware('auth')->group(

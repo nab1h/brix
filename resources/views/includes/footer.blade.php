@@ -236,6 +236,13 @@
          e.preventDefault();
          var toast = document.getElementById('toast');
          var text = document.getElementById('toast-text');
+         fetch('/contact', {
+             method: 'POST',
+             body: new FormData(e.target),
+             headers: {
+                 'X-Requested-With': 'XMLHttpRequest'
+             }
+         })
          text.textContent = 'تم الإرسال بنجاح! سنتواصل معك قريباً';
          toast.classList.add('show');
          e.target.reset();

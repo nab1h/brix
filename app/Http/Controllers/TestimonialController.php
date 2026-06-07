@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Notifications\NewTestimonialNotification;
+use Illuminate\Support\Facades\Notification;
+
 
 class TestimonialController extends Controller
 {
@@ -37,14 +40,17 @@ class TestimonialController extends Controller
             ], 422);
         }
 
-        // الحفظ في قاعدة البيانات
-        Testimonial::create([
+
+        $testimonial = Testimonial::create([
             'name'       => $request->name,
             'role'       => $request->role,
             'message'    => $request->message,
             'job'     => $request->job,
-            'is_active'  => false, // جعله غير نشط افتراضياً حتى يوافق الأدمن
+            'is_active'  => false,
         ]);
+
+        Notification::route('mail', env('MAIL_OWNER'))
+            ->notify(new NewTestimonialNotification($testimonial));
 
         // إرجاع استجابة نجاح JSON
         return response()->json([
