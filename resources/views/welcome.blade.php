@@ -824,39 +824,52 @@
                 </div>
             </div>
             <div class="lg:col-span-3">
-                <form onsubmit="submitForm(event)" class="reveal bg-ivory border border-sand rounded-2xl p-8 md:p-10 space-y-5">
+                <form action="{{ route('frontend.contact.store') }}" method="POST" onsubmit="submitForm(event)" class="reveal bg-ivory border border-sand rounded-2xl p-8 md:p-10 space-y-5">
+
+                    @csrf {{-- ضروري جداً لحماية الفورم في لارافل --}}
+
+                    {{-- رسالة النجاح --}}
+                    @if (session('status'))
+                    <div class="col-span-2 bg-green-50 border border-green-200 text-green-700 rounded-xl p-4 text-sm flex items-center gap-2">
+                        <i class="fas fa-check-circle"></i> {{ session('status') }}
+                    </div>
+                    @endif
 
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الاسم</label>
-                            <input name="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="الاسم الكامل">
+                            <input name="name" type="text" value="{{ old('name') }}" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none @error('name') border-red-500 @enderror" placeholder="الاسم الكامل">
+                            @error('name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">البريد الإلكتروني</label>
-                            <input name="email" type="email" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="email@example.com">
+                            <input name="email" type="email" value="{{ old('email') }}" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none @error('email') border-red-500 @enderror" placeholder="email@example.com">
+                            @error('email') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الهاتف</label>
-                            <input name="phone" type="tel" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="+966 5X XXX XXXX">
+                            <input name="phone" type="tel" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="+966 5X XXX XXXX">
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الموضوع</label>
                             <select name="subject" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none">
-                                <option>استفسار عام</option>
-                                <option>طلب عرض سعر</option>
-                                <option>متابعة طلب</option>
+                                <option value="استفسار عام" {{ old('subject') == 'استفسار عام' ? 'selected' : '' }}>استفسار عام</option>
+                                <option value="طلب عرض سعر" {{ old('subject') == 'طلب عرض سعر' ? 'selected' : '' }}>طلب عرض سعر</option>
+                                <option value="متابعة طلب" {{ old('subject') == 'متابعة طلب' ? 'selected' : '' }}>متابعة طلب</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-bold text-warm-700 mb-2">رسالتك</label>
-                        <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none resize-none" placeholder="أخبرنا عن مشروعك..."></textarea>
+                        <!-- لاحظ إننا غيرنا name لـ msg عشان تطابق الداتابيز -->
+                        <textarea name="msg" rows="5" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none resize-none @error('msg') border-red-500 @enderror" placeholder="أخبرنا عن مشروعك...">{{ old('msg') }}</textarea>
+                        @error('msg') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
                     </div>
 
                     <button type="submit" class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2">
@@ -865,7 +878,7 @@
 
                 </form>
 
-                
+
             </div>
         </div>
     </div>
@@ -880,17 +893,23 @@
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-4xl font-bold text-warm-900 mt-4">أخبرنا عن <span class="text-terracotta">مشروعك</span></h2>
             <p class="reveal reveal-delay-2 text-warm-500 mt-3">املأ النموذج وسنقدم لك عرض سعر مخصص خلال ٢٤ ساعة</p>
         </div>
-        <form onsubmit="submitForm(event)" class="reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
+        <form action="{{ route('reservations.store') }}" method="POST" class="reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
+            @if(session('status'))
+            <div style=" margin-bottom: 20px; background: #D4AF37; color: #000; padding: 15px 25px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                {{ session('status') }}
+            </div>
+            @endif
+            @csrf
             <div class="grid sm:grid-cols-2 gap-5">
-                <div><label class="block text-sm font-bold text-warm-700 mb-2">الاسم *</label><input type="text" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
-                <div><label class="block text-sm font-bold text-warm-700 mb-2">الشركة</label><input type="text" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
+                <div><label class="block text-sm font-bold text-warm-700 mb-2">الاسم *</label><input name="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
+                <div><label class="block text-sm font-bold text-warm-700 mb-2">الشركة</label><input name="brand" type="text" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
             </div>
             <div class="grid sm:grid-cols-2 gap-5">
-                <div><label class="block text-sm font-bold text-warm-700 mb-2">الهاتف *</label><input type="tel" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
-                <div><label class="block text-sm font-bold text-warm-700 mb-2">البريد الإلكتروني *</label><input type="email" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
+                <div><label class="block text-sm font-bold text-warm-700 mb-2">الهاتف *</label><input name="phone" type="tel" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
+                <div><label class="block text-sm font-bold text-warm-700 mb-2">البريد الإلكتروني *</label><input name="email" type="email" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
             </div>
             <div><label class="block text-sm font-bold text-warm-700 mb-2">نوع الخدمة *</label>
-                <select required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all">
+                <select name="category" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all">
                     <option value="">اختر نوع الخدمة</option>
                     <option>الطباعة الديجيتال</option>
                     <option>تصميم الهوية البصرية</option>

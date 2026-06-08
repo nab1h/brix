@@ -19,17 +19,35 @@
                 </div>
 
 
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('profile.index')" :active="request()->routeIs('profile.index')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-
-
                 @if(auth()->user()->role === 'admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('admin.home-contents.index')" :active="request()->routeIs('admin.home-contents.index')">
                         {{ __('Contents') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
+                @if(auth()->user()->role === 'admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
+                        {{ __('Categories') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
+                @if(auth()->user()->role === 'admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('admin.brands.index')" :active="request()->routeIs('admin.brands.index')">
+                        {{ __('Brands') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
+
+                @if(auth()->user()->role === 'admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('admin.portfolios.index')" :active="request()->routeIs('admin.portfolios.index')">
+                        {{ __('Portfolios') }}
                     </x-nav-link>
                 </div>
                 @endif
@@ -71,6 +89,11 @@
                             <a href="{{ route('admin.testimonials.index') }}"
                                 class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
                                 Testimonials
+                            </a>
+
+                            <a href="{{ route('admin.contacts.index') }}"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                Contacts
                             </a>
 
                             <a href="{{ route('admin.statistics.index') }}"

@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use App\Models\HomeContent;
 
 class ProfileController extends Controller
 {
 
     public function index(Request $request): View
     {
-        return view('dashboard');
+        $content = HomeContent::firstOrCreate(['id' => 1]);
+
+        return view('admin.home_contents.index', compact('content'));
     }
 
     public function edit(Request $request): View
@@ -63,7 +66,4 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
-
-
-
 }

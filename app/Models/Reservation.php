@@ -12,10 +12,10 @@ class Reservation extends Model
     protected $fillable = [
         'name',
         'phone',
-        'guests',
-        'reservation_date',
-        'reservation_time',
         'status',
+        'email',
+        'brand',
+        'category',
         'notes',
         'is_archive',
         'is_delete',

@@ -3,8 +3,12 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ContactController;
+
 use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatisticController;
@@ -14,7 +18,7 @@ use App\Http\Controllers\Admin\HomeContentController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contact', [ContactController::class, 'store'])->name('frontend.contact.store');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
 Route::get('/test-mail', function () {
@@ -70,6 +74,14 @@ Route::middleware('auth')->group(
                 Route::put('/testimonials/{id}', [TestimonialController::class, 'update'])->name('testimonials.update');
                 Route::put('/testimonials/{id}/status', [TestimonialController::class, 'updateStatus'])->name('testimonials.update-status');
                 Route::delete('/testimonials/{id}', [TestimonialController::class, 'destroy'])->name('testimonials.destroy');
+            });
+
+            Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
+                Route::resource('brands', BrandController::class);
+                Route::resource('categories', CategoryController::class);
+                Route::resource('portfolios', PortfolioController::class);
+                Route::resource('contacts', ContactController::class)->except(['create', 'edit', 'update', 'show']);
+                Route::get('contacts/{contact}/read', [ContactController::class, 'markAsRead'])->name('contacts.read');
             });
         });
 

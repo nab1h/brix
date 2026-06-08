@@ -95,11 +95,9 @@
                             <tr>
                                 <th class="px-6 py-4 text-start">#ID</th>
                                 <th class="px-6 py-4 text-start">الاسم</th>
-                                <th class="px-6 py-4 text-start">الهاتف</th>
-                                <th class="px-6 py-4 text-start">تواصل</th>
-                                <th class="px-6 py-4 text-start">الأفراد</th>
-                                <th class="px-6 py-4 text-start">التاريخ</th>
-                                <th class="px-6 py-4 text-start">الوقت</th>
+                                <th class="px-6 py-4 text-start">الإيميل</th>
+                                <th class="px-6 py-4 text-start">البراند</th>
+                                <th class="px-6 py-4 text-start">القسم</th>
                                 <th class="px-6 py-4 text-start">الحالة</th>
                                 <th class="px-6 py-4 text-center">إجراءات</th>
                             </tr>
@@ -118,32 +116,31 @@
                                 <td class="px-6 py-4 text-gray-600">
                                     {{ $reservation->phone }}
                                 </td>
+                                <!-- عمود الإيميل -->
+                                <td class="px-6 py-4 text-gray-600 text-sm">
+                                    {{ $reservation->email ?? '-' }}
+                                </td>
+
+                                <!-- عمود البراند -->
                                 <td class="px-6 py-4">
-                                    @php
-                                    $cleanPhone = preg_replace('/[^0-9]/', '', $reservation->phone);
-                                    $cleanPhone = ltrim($cleanPhone, '0');
-                                    @endphp
-
-                                    <a href="https://wa.me/{{ $cleanPhone }}?text={{ rawurlencode(
-        'مرحباً ' . $reservation->name . '، نتشرف بتواصلك معنا بخصوص حجزك بتاريخ ' . $reservation->reservation_date . ' الساعة ' . \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i') . '. هل تريد التعديل أو التأكيد؟'
-    ) }}"
-                                        target="_blank"
-                                        class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-600 hover:bg-green-600 hover:text-white transition"
-                                        title="تواصل عبر واتساب">
-                                        <i class="fab fa-whatsapp text-xs"></i>
-                                    </a>
+                                    @if($reservation->brand)
+                                    <span class="bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full text-xs">
+                                        {{ $reservation->brand }}
+                                    </span>
+                                    @else
+                                    <span class="text-gray-400 text-xs">-</span>
+                                    @endif
                                 </td>
 
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->guests }}
-                                </td>
-
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->reservation_date }}
-                                </td>
-
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ \Carbon\Carbon::parse($reservation->reservation_time)->format('H:i') }}
+                                <!-- عمود الكاتجوري -->
+                                <td class="px-6 py-4">
+                                    @if($reservation->category)
+                                    <span class="bg-purple-50 text-purple-700 border border-purple-200 px-2 py-0.5 rounded-full text-xs">
+                                        {{ $reservation->category }}
+                                    </span>
+                                    @else
+                                    <span class="text-gray-400 text-xs">-</span>
+                                    @endif
                                 </td>
 
                                 <td class="px-6 py-4">

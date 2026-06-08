@@ -77,12 +77,12 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
-            'guests' => 'required|integer|min:1',
-            'reservation_date' => 'required|date',
-            'reservation_time' => 'required',
-            'notes' => 'nullable|string',
+            'name'     => 'required|string|max:255',
+            'phone'    => 'required|string|max:20',
+            'email'    => 'nullable|email|max:255',
+            'brand'    => 'nullable|string|max:255',
+            'category' => 'nullable|string|max:255',
+            'notes'    => 'nullable|string',
         ]);
 
         $validated['status'] = 'pending';
@@ -117,9 +117,9 @@ class ReservationController extends Controller
         $validated = $request->validate([
             'name'              => 'required|string|max:255',
             'phone'             => 'required|string|max:20',
-            'guests'            => 'required|integer|min:1',
-            'reservation_date'  => 'required|date',
-            'reservation_time'  => 'required',
+            'email'             => 'nullable|email|max:255',      // <-- تم الإضافة
+            'brand'             => 'nullable|string|max:255',     // <-- تم الإضافة
+            'category'          => 'nullable|string|max:255',     // <-- تم الإضافة
             'status'            => 'required|in:pending,confirmed,cancelled,completed',
             'notes'             => 'nullable|string',
         ]);
@@ -193,5 +193,4 @@ class ReservationController extends Controller
 
         return redirect()->route('reservations.archive')->with('status', 'تم استعادة الحجز بنجاح!');
     }
-
 }
