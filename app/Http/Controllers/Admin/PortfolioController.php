@@ -20,12 +20,10 @@ class PortfolioController extends Controller
             $query->where('name', 'like', '%' . $request->search . '%');
         }
 
-        // فلترة حسب البراند
         if ($request->filled('brand_id')) {
             $query->where('brand_id', $request->brand_id);
         }
 
-        // فلترة حسب القسم
         if ($request->filled('cat_id')) {
             $query->where('cat_id', $request->cat_id);
         }
@@ -33,7 +31,6 @@ class PortfolioController extends Controller
         $portfolios = $query->latest()->paginate(10);
         $totalPortfolios = Portfolio::count();
 
-        // جلب البراندات والأقسام لعرضهم في الفلاتر
         $brands = Brand::all();
         $categories = Category::all();
 

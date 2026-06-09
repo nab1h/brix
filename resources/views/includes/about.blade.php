@@ -1,7 +1,7 @@
 
-    <section id="about" class="py-24 md:py-40">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+    <section id="about" class="about-bg py-24 md:py-40">
+        <div class="max-w-[1400px] mx-auto md:px-12">
+            <div class="grid lg:grid-cols-2 gap-1 md:gap-24 items-center">
                 @php
                 $image = ($galleryImages && $galleryImages->first()?->path)
                 ? asset('storage/' . $galleryImages->first()->path)
@@ -9,7 +9,7 @@
     @endphp
 
     <div class="reveal img-reveal rounded-2xl overflow-hidden">
-        <img src="{{ $image }}" alt="ورشة العمل" class="w-full aspect-[4/5] object-cover">
+        <img src="{{ $image }}" alt="ورشة العمل" class="w-full aspect-[4/5]">
     </div>
     <div>
         <div class="reveal"><span class="text-terracotta text-sm font-bold tracking-[0.15em]">فلسفتنا</span></div>

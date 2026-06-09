@@ -70,7 +70,7 @@
 
 
 <!-- VALUES -->
-<section class="py-24 md:py-32 bg-cream/60">
+<section class="value-bg py-24 md:py-32 bg-cream/60">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
         <div class="text-center mb-20">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">قيمنا</span>
@@ -98,7 +98,7 @@
 
 
 <!-- SERVICES -->
-<section id="services" class="py-24 md:py-40">
+<section id="services" class="services-bg py-24 md:py-40">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
         <div class="text-center mb-20">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">خدماتنا</span>
@@ -106,95 +106,33 @@
             <p class="reveal reveal-delay-2 text-warm-500 text-lg mt-4 max-w-xl mx-auto">سواء كنت تؤسس علامة جديدة أو تطور هوية موجودة — لدينا الحل المناسب</p>
         </div>
 
-        <div class="mb-20">
-            <div class="reveal flex items-center gap-4 mb-8">
-                <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center"><i class="fas fa-building text-terracotta text-sm"></i></div>
-                <h3 class="font-serif text-2xl font-bold text-warm-900">لهويتك التجارية</h3>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="reveal card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-terracotta/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/brand-identity-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-terracotta transition-colors">تصميم الهوية البصرية</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">شعارات وهويات متكاملة تعكس روح علامتك التجارية بكل وضوح</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-1 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-terracotta/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/social-design-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-terracotta transition-colors">تصميم السوشيال ميديا</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">محتوى بصري جذاب يعزز تواجدك الرقمي ويزيد تفاعل جمهورك</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-2 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-terracotta/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/marketing-camp-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-terracotta transition-colors">الحملات التسويقية</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">تخطيط وتنفيذ حملات متكاملة تحقق نتائج ملموسة ومستدامة</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="mb-20">
-            <div class="reveal flex items-center gap-4 mb-8">
-                <div class="w-10 h-10 rounded-full bg-olive-100 flex items-center justify-center"><i class="fas fa-print text-olive-600 text-sm"></i></div>
-                <h3 class="font-serif text-2xl font-bold text-warm-900">لطباعتك واحتياجاتك</h3>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="reveal card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-olive-400/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/digital-print-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-olive-600 transition-colors">الطباعة الديجيتال</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">طباعة رقمية فائقة الجودة بجميع المقاسات وعلى مختلف الخامات</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-1 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-olive-400/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/large-format-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-olive-600 transition-colors">الطباعة بمقاسات كبيرة</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">بانرات وملصقات ولوحات بمقاسات واسعة وألوان زاهية ومستقرة</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-2 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-olive-400/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/commercial-print-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-olive-600 transition-colors">المطبوعات التجارية</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">بطاقات عمل وخطابات ومطبوعات مؤسسية بأعلى معايير الاحتراف</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <div>
-            <div class="reveal flex items-center gap-4 mb-8">
-                <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center"><i class="fas fa-store text-brand-blue text-sm"></i></div>
-                <h3 class="font-serif text-2xl font-bold text-warm-900">لمناسباتك ومنتجاتك</h3>
-            </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="reveal card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-brand-blue/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/signage-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">اللوحات الإعلانية</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">لوحات خارجية وداخلية وتجهيز معارض وفعاليات بكفاءة عالية</p>
+
+
+
+                @foreach ($categories as $category)
+                <div class="group relative bg-white rounded-3xl overflow-hidden shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-terracotta/20">
+                    <div class="relative overflow-hidden aspect-[4/3]">
+                        <img src="{{ asset('storage/' . $category->img) }}" alt="تصميم الهوية البصرية" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+
+                    <div class="p-6 relative">
+                        <div class="absolute top-0 left-6 w-10 h-1 bg-terracotta rounded-b-full transition-all duration-500 group-hover:w-16"></div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2 mt-2 group-hover:text-terracotta transition-colors duration-300">{{ $category->name }}</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed mb-5">{{ $category->description }}</p>
                     </div>
                 </div>
-                <div class="reveal reveal-delay-1 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-brand-blue/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/promo-gifts-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">الهدايا الدعائية</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">أكثر من ٥٠٠٠ منتج دعائي بتخصيص كامل يحمل علامتك بأسلوب أنيق</p>
-                    </div>
-                </div>
-                <div class="reveal reveal-delay-2 card-lift group bg-ivory border border-sand rounded-2xl overflow-hidden hover:border-brand-blue/30 transition-all duration-500">
-                    <div class="img-reveal aspect-[3/2]"><img src="https://picsum.photos/seed/packaging-bx/600/400.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"></div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-xl font-bold mb-2 group-hover:text-brand-blue transition-colors">التغليف والعبوات</h4>
-                        <p class="text-sm text-warm-500 leading-relaxed">تصميم وتصنيع عبوات مبتكرة تحمي منتجاتك وتجذب الأنظار</p>
-                    </div>
-                </div>
+                @endforeach
+
+
+
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -441,7 +379,7 @@
                 <span class="text-olive-600 text-sm font-bold tracking-[0.15em]">شاركنا رأيك</span>
                 <h3 class="font-serif text-2xl md:text-3xl font-bold text-warm-900 mt-3">تجربتك تهمنا</h3>
             </div>
-            <form id="testi-form" action="{{ route('testimonials.store') }}" method="POST" class="bg-ivory/80 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-10 space-y-5 shadow-xl">
+            <form id="testi-form" action="{{ route('testimonials.store') }}" method="POST" class="contact-bg-form bg-ivory/80 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-10 space-y-5 shadow-xl">
                 @csrf
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -478,19 +416,34 @@
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">شركاؤنا</span>
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-4xl font-bold text-warm-900 mt-4">يثقون بنا</h2>
         </div>
-        <div class="reveal grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">أرامكو</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">بنك الأهلي</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">STC</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">الراجحي</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">سابك</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">السعودية</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">العليان</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">معادن</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">زين</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">mobily</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">الوقف</span></div>
-            <div class="h-24 rounded-xl border border-sand bg-ivory flex items-center justify-center hover:border-terracotta/30 transition-colors"><span class="font-serif font-bold text-warm-400 text-sm text-center">neom</span></div>
+
+        <div class="reveal grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            @foreach($brands as $brand)
+
+            <a href="{{ $brand->url ?? '#' }}" target="_blank"
+                class="group relative bg-white rounded-2xl border border-gray-100 p-6 flex flex-col items-center justify-center shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-terracotta/40 aspect-[4/3]">
+
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110">
+                    @if($brand->image)
+                    <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="w-full h-full object-contain">
+                    @else
+                    <div class="w-full h-full rounded-full bg-gray-100 flex items-center justify-center text-gray-400">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    @endif
+                </div>
+
+                <h4 class="font-serif font-bold text-warm-900 text-sm text-center transition-colors duration-300 group-hover:text-terracotta line-clamp-1">
+                    {{ $brand->name }}
+                </h4>
+
+                <div class="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transform -translate-y-1 group-hover:translate-y-0 transition-all duration-300 text-terracotta">
+                    <i class="fas fa-external-link-alt text-xs"></i>
+                </div>
+
+            </a>
+
+            @endforeach
         </div>
     </div>
 </section>
@@ -532,7 +485,7 @@
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="py-24 md:py-32 bg-cream/60">
+<section id="faq" class="faq-bg py-24 md:py-32 bg-cream/60">
     <div class="max-w-3xl mx-auto px-6 md:px-12">
         <div class="text-center mb-16">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">أسئلة شائعة</span>
@@ -565,7 +518,7 @@
 <section class="py-24 md:py-32 relative overflow-hidden">
     <div class="absolute inset-0">
         <img src="cta.jpg" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-warm-800/50"></div>
+        <div class="absolute inset-0 bg-primary/80"></div>
     </div>
     <div class="max-w-3xl mx-auto px-6 md:px-12 text-center relative z-10">
         <div class="reveal">
@@ -584,7 +537,8 @@
 
 
 <!-- CONTACT -->
-<section id="contact" class="py-24 md:py-40">
+<section id="contact" class="contact-bg relative py-24 md:py-40 overflow-hidden">
+
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
         <div class="text-center mb-20">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">تواصل معنا</span>
@@ -622,62 +576,87 @@
                     </a>
                 </div>
             </div>
-            <div class="lg:col-span-3">
-                <form action="{{ route('frontend.contact.store') }}" method="POST" class="reveal bg-ivory border border-sand rounded-2xl p-8 md:p-10 space-y-5">
-
+            <div class="lg:col-span-3 relative">
+                <form action="{{ route('frontend.contact.store') }}"
+                    method="POST"
+                    class="contact-bg-form relative reveal border border-sand rounded-2xl p-8 md:p-10 space-y-5 overflow-hidden">
                     @csrf
-
                     {{-- رسالة النجاح --}}
                     @if (session('status'))
                     <div class="col-span-2 bg-green-50 border border-green-200 text-green-700 rounded-xl p-4 text-sm flex items-center gap-2">
-                        <i class="fas fa-check-circle"></i> {{ session('status') }}
+                        <i class="fas fa-check-circle"></i>
+                        {{ session('status') }}
                     </div>
                     @endif
 
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الاسم</label>
-                            <input name="name" type="text" value="{{ old('name') }}" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none @error('name') border-red-500 @enderror" placeholder="الاسم الكامل">
-                            @error('name') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                            <input name="name" type="text" value="{{ old('name') }}" required
+                                class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none @error('name') border-red-500 @enderror"
+                                placeholder="الاسم الكامل">
+                            @error('name')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">البريد الإلكتروني</label>
-                            <input name="email" type="email" value="{{ old('email') }}" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none @error('email') border-red-500 @enderror" placeholder="email@example.com">
-                            @error('email') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                            <input name="email" type="email" value="{{ old('email') }}" required
+                                class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none @error('email') border-red-500 @enderror"
+                                placeholder="email@example.com">
+                            @error('email')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الهاتف</label>
-                            <input name="phone" type="tel" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="+20 1X XXX XXXX">
+                            <input name="phone" type="tel" value="{{ old('phone') }}"
+                                class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none"
+                                placeholder="+20 1X XXX XXXX">
                         </div>
 
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الموضوع</label>
-                            <select name="subject" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none">
-                                <option value="استفسار عام" {{ old('subject') == 'استفسار عام' ? 'selected' : '' }}>استفسار عام</option>
-                                <option value="طلب عرض سعر" {{ old('subject') == 'طلب عرض سعر' ? 'selected' : '' }}>طلب عرض سعر</option>
-                                <option value="متابعة طلب" {{ old('subject') == 'متابعة طلب' ? 'selected' : '' }}>متابعة طلب</option>
-                                <option value="توظيف" {{ old('career') == 'توظيف' ? 'selected' : '' }}>توظيف</option>
+                            <select name="subject"
+                                class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none">
+                                <option value="استفسار عام" {{ old('subject') == 'استفسار عام' ? 'selected' : '' }}>
+                                    استفسار عام
+                                </option>
+                                <option value="طلب عرض سعر" {{ old('subject') == 'طلب عرض سعر' ? 'selected' : '' }}>
+                                    طلب عرض سعر
+                                </option>
+                                <option value="متابعة طلب" {{ old('subject') == 'متابعة طلب' ? 'selected' : '' }}>
+                                    متابعة طلب
+                                </option>
+                                <option value="توظيف" {{ old('subject') == 'توظيف' ? 'selected' : '' }}>
+                                    توظيف
+                                </option>
                             </select>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-bold text-warm-700 mb-2">رسالتك</label>
-                        <!-- لاحظ إننا غيرنا name لـ msg عشان تطابق الداتابيز -->
-                        <textarea name="msg" rows="5" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none resize-none @error('msg') border-red-500 @enderror" placeholder="أخبرنا عن مشروعك...">{{ old('msg') }}</textarea>
-                        @error('msg') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                        <textarea name="msg" rows="5" required
+                            class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none resize-none @error('msg') border-red-500 @enderror"
+                            placeholder="أخبرنا عن مشروعك...">{{ old('msg') }}</textarea>
+
+                        @error('msg')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
-                    <button type="submit" class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane text-sm"></i> إرسال الرسالة
+                    <button type="submit"
+                        class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane text-sm"></i>
+                        إرسال الرسالة
                     </button>
 
                 </form>
-
 
             </div>
         </div>
@@ -686,7 +665,7 @@
 
 
 <!-- QUOTE -->
-<section id="quote" class="py-24 md:py-32 bg-primary relative overflow-hidden">
+<section id="quote" class="pricing-bg pricing-bg-right py-24 md:py-32 bg-primary/70 relative overflow-hidden">
     <div class="max-w-3xl mx-auto px-6 md:px-12 relative z-10">
         <div class="text-center mb-12">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">عرض سعر</span>
@@ -698,7 +677,7 @@
             <span id="toast-text"></span>
         </div>
 
-        <form id="reservation-form" action="{{ route('reservations.store') }}" method="POST" class="reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
+        <form id="reservation-form" action="{{ route('reservations.store') }}" method="POST" class="contact-bg-form reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
             @csrf
             <div class="grid sm:grid-cols-2 gap-5">
                 <div><label class="block text-sm font-bold text-warm-700 mb-2">الاسم *</label><input name="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>

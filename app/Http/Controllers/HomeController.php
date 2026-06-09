@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use App\Models\Setting;
 use App\Models\HomeContent;
 use App\Models\Faq;
 use App\Models\Media;
 use App\Models\Career;
+use App\Models\Category;
 use App\Models\Statistic;
+use App\Models\Portfolio;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $content = HomeContent::firstOrCreate(['id' => 1]);
         $faqs = Faq::where('is_active', true)->get();
@@ -26,7 +29,18 @@ class HomeController extends Controller
             ->get();
         $careers = Career::all();
 
-        return view('welcome',compact('careers','stats', 'content', 'faqs',  'heroVideo', 'heroImage', 'galleryImages', 'testimonials'));
+        $query = Portfolio::with(['brand', 'category']);
+
+        if ($request->filled('cat_id')) {
+            $query->where('cat_id', $request->cat_id);
+        }
+
+        $portfolios = $query->latest()->get();
+        $categories = Category::all();
+
+        $brands = Brand::all();
+
+        return view('welcome',compact('portfolios', 'brands' ,'categories','careers','stats', 'content', 'faqs',  'heroVideo', 'heroImage', 'galleryImages', 'testimonials'));
     }
 
 

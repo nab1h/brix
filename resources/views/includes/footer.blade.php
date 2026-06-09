@@ -1,5 +1,5 @@
  <!-- FOOTER -->
- <footer class="bg-warm-50 text-warm-200 pt-20 pb-8">
+ <footer class="footer-bg bg-warm-50 text-warm-200 pt-20 pb-8">
      <div class="max-w-[1400px] mx-auto px-6 md:px-12">
          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
              <div>
@@ -78,6 +78,74 @@
 
 
  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         const filterBtns = document.querySelectorAll('#portfolio-filters .filter-btn');
+         const portfolioGrid = document.getElementById('portfolio-grid');
+
+         // لو لقينا الأزرار والشبكة، نشغل الكود
+         if (filterBtns.length > 0 && portfolioGrid) {
+
+             filterBtns.forEach(btn => {
+                 btn.addEventListener('click', function(e) {
+
+                     // 1. نمنع الرابط من عمل رفريش فوراً
+                     e.preventDefault();
+                     e.stopPropagation();
+
+                     // 2. نجيب الرابط اللي في الزر
+                     const url = this.getAttribute('href');
+
+                     // 3. لو الرابط هو نفسه الصفحة الحالية منعملش حاجة
+                     if (url === window.location.href || url === window.location.pathname) {
+                         return;
+                     }
+
+                     // 4. نحدث لون الأزرار
+                     filterBtns.forEach(b => b.classList.remove('filter-active'));
+                     this.classList.add('filter-active');
+
+                     // 5. تأثير تحميل خفيف
+                     portfolioGrid.style.opacity = '0.5';
+                     portfolioGrid.style.transition = 'opacity 0.3s ease';
+
+                     // 6. نجيب البيانات من السيرفر في الخلفية
+                     fetch(url, {
+                             headers: {
+                                 'X-Requested-With': 'XMLHttpRequest' // نخبر لارافيل إن ده طلب AJAX
+                             }
+                         })
+                         .then(response => response.text())
+                         .then(html => {
+                             // نستخرج الكروت الجديدة من الـ HTML اللي رجع
+                             const parser = new DOMParser();
+                             const doc = parser.parseFromString(html, 'text/html');
+                             const newGrid = doc.getElementById('portfolio-grid');
+
+                             // نبدل الكروت القديمة بالجديدة
+                             if (newGrid) {
+                                 portfolioGrid.innerHTML = newGrid.innerHTML;
+                             }
+
+                             // نرجع الشكل الطبيعي
+                             portfolioGrid.style.opacity = '1';
+
+                             // نحدث الرابط في شريط المتصفح
+                             history.pushState({}, '', url);
+                         })
+                         .catch(error => {
+                             console.error('Error:', error);
+                             portfolioGrid.style.opacity = '1';
+                         });
+                 });
+             });
+
+         } else {
+             console.log('مفيش أزرار فلتر أو شبكة بورتفوليو في الصفحة');
+         }
+     });
+
+
+
      // ===== Mobile Menu — FIXED =====
      const mobileOverlay = document.getElementById('mobile-overlay');
      const mobilePanel = document.getElementById('mobile-panel');

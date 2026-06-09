@@ -1,73 +1,122 @@
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="py-24 md:py-40">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="text-center mb-12">
-                <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">أعمالنا</span>
-                <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">مشاريع تُلهم</h2>
-            </div>
-            <div class="reveal flex flex-wrap justify-center gap-3 mb-14" id="portfolio-filters">
-                <button onclick="filterPortfolio('all')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all filter-active">الكل</button>
-                <button onclick="filterPortfolio('branding')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all">هويات بصرية</button>
-                <button onclick="filterPortfolio('prints')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all">مطبوعات</button>
-                <button onclick="filterPortfolio('signage')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all">لوحات إعلانية</button>
-                <button onclick="filterPortfolio('packaging')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all">تغليف</button>
-                <button onclick="filterPortfolio('social')" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all">سوشيال ميديا</button>
-            </div>
-            <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="portfolio-item reveal card-lift group cursor-pointer" data-cat="branding">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-brand1/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-terracotta text-xs font-bold">هوية بصرية</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">مطاعم الشرق</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal reveal-delay-1 card-lift group cursor-pointer" data-cat="social">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-social1/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-olive-400 text-xs font-bold">سوشيال ميديا</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">حملة أزياء ربيع</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal reveal-delay-2 card-lift group cursor-pointer" data-cat="signage">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-sign1/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-brand-blue text-xs font-bold">لوحات إعلانية</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">مول النخيل</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal card-lift group cursor-pointer" data-cat="packaging">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-pack1/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-olive-400 text-xs font-bold">تغليف</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">منتجات طبيعية</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal reveal-delay-1 card-lift group cursor-pointer" data-cat="prints">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-print1/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-terracotta text-xs font-bold">مطبوعات</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">بنك المستقبل</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item reveal reveal-delay-2 card-lift group cursor-pointer" data-cat="branding">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/port-brand2/500/625.jpg" alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                            <div><span class="text-terracotta text-xs font-bold">هوية بصرية</span>
-                                <h4 class="text-ivory font-serif text-xl font-bold">مقاهي الفنجان</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio-bg py-24 md:py-40">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+        <div class="text-center mb-12">
+            <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">أعمالنا</span>
+            <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">مشاريع تُلهم</h2>
         </div>
-    </section>
+
+        <!-- أزرار الفلترة - تأكد إن id="portfolio-filters" موجود -->
+        <div id="portfolio-filters" class="reveal flex flex-wrap justify-center gap-3 mb-14">
+            <a href="{{ url()->current() }}"
+                class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all {{ !request()->has('cat_id') ? 'filter-active' : '' }}">
+                الكل
+            </a>
+
+            @foreach($categories as $category)
+            <a href="{{ url()->current() . '?cat_id=' . $category->id }}"
+                class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border border-sand hover:border-terracotta transition-all {{ request('cat_id') == $category->id ? 'filter-active' : '' }}">
+                {{ $category->name }}
+            </a>
+            @endforeach
+        </div>
+
+        <!-- كروت المشاريع - تأكد إن id="portfolio-grid" موجود -->
+        <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($portfolios as $portfolio)
+            <div class="portfolio-item reveal card-lift group cursor-pointer">
+                <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]">
+
+                    @if($portfolio->brand)
+                    <div class="absolute top-4 right-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-2 rounded-full shadow-lg transition-transform duration-300 group-hover:scale-105 border border-white/50">
+                        @if($portfolio->brand->image)
+                        <img src="{{ Storage::url($portfolio->brand->image) }}" alt="{{ $portfolio->brand->name }}" class="w-8 h-8 rounded-full object-cover ring-2 ring-white">
+                        @else
+                        <div class="w-8 h-8 rounded-full bg-terracotta/20 flex items-center justify-center ring-2 ring-white">
+                            <i class="fas fa-building text-terracotta text-xs"></i>
+                        </div>
+                        @endif
+                        <span class="text-xs font-bold text-gray-800">{{ $portfolio->brand->name }}</span>
+                    </div>
+                    @endif
+
+                    <img src="{{ $portfolio->image ? Storage::url($portfolio->image) : 'https://picsum.photos/seed/default-port/500/625.jpg' }}"
+                        alt="{{ $portfolio->name }}"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-warm-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                        <div>
+                            <span class="text-terracotta text-xs font-bold">{{ $portfolio->category->name ?? 'غير مصنف' }}</span>
+                            <h4 class="text-ivory font-serif text-xl font-bold">{{ $portfolio->name }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- كود الجافاسكريبت - وضعناه هنا عشان يتنفذ بعد ما الـ HTML يترسم -->
+<script>
+    // بنستخدم setTimeout عشان نأكد إن كل العناصر اترندرت في الصفحة
+    setTimeout(function() {
+        const filterBtns = document.querySelectorAll('#portfolio-filters .filter-btn');
+        const portfolioGrid = document.getElementById('portfolio-grid');
+
+        if (filterBtns.length > 0 && portfolioGrid) {
+            console.log('✅ تم العثور على الأزرار والشبكة بنجاح!');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+
+                    // 1. منع الرابط من عمل رفريش
+                    e.preventDefault();
+
+                    // 2. نجيب الرابط اللي في الزر
+                    const url = this.getAttribute('href');
+
+                    // 3. نحدث لون الأزرار
+                    filterBtns.forEach(b => b.classList.remove('filter-active'));
+                    this.classList.add('filter-active');
+
+                    // 4. تأثير تحميل خفيف
+                    portfolioGrid.style.opacity = '0.5';
+                    portfolioGrid.style.transition = 'opacity 0.3s ease';
+
+                    // 5. نجيب البيانات من السيرفر في الخلفية
+                    fetch(url, {
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            // نستخرج الكروت الجديدة من الـ HTML اللي رجع
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const newGrid = doc.getElementById('portfolio-grid');
+
+                            // نبدل الكروت القديمة بالجديدة
+                            if (newGrid) {
+                                portfolioGrid.innerHTML = newGrid.innerHTML;
+                            }
+
+                            // نرجع الشكل الطبيعي
+                            portfolioGrid.style.opacity = '1';
+
+                            // نحدث الرابط في شريط المتصفح
+                            history.pushState({}, '', url);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            portfolioGrid.style.opacity = '1';
+                        });
+                });
+            });
+
+        } else {
+            console.log('❌ لسه مفيش أزرار أو شبكة');
+        }
+    }, 500); // بيتأخر نص ثانية عشان يستنى الـ HTML
+</script>

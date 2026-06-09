@@ -37,18 +37,6 @@
             <p id="hero-subtitle" class="text-warm-300 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
                 شريكك المتكامل في عالم الطباعة الديجيتال والتصميم والإعلانات المبتكرة
             </p>
-
-            <!-- CTA Buttons -->
-            <div id="hero-ctas" class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#quote" class="flex items-center gap-2 bg-[#FA6B31] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#E85A20] transition-all duration-300 shadow-xl shadow-[#FA6B31]/20 hover:shadow-[#FA6B31]/40 hover:scale-105">
-                    <i class="fas fa-file-invoice"></i>
-                    اطلب عرض سعر
-                </a>
-                <a href="#services" class="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                    تعرف على خدماتنا
-                    <i class="fas fa-arrow-left"></i>
-                </a>
-            </div>
         </div>
     </div>
 
