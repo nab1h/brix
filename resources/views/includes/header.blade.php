@@ -313,110 +313,110 @@
 </head>
 
 <body class="bg-ivory text-warm-800 paper-texture">
+        <!-- Toast -->
+        <div id="toast" class="toast-msg fixed bottom-8 left-1/2 -translate-x-1/2 z-[200] bg-warm-800 text-ivory px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 text-sm font-semibold">
+            <i class="fas fa-check-circle text-olive-400"></i>
+            <span id="toast-text">تم الإرسال بنجاح</span>
+        </div>
 
-    <!-- Toast -->
-    <div id="toast" class="toast-msg fixed bottom-8 left-1/2 -translate-x-1/2 z-[200] bg-warm-800 text-ivory px-8 py-4 rounded-full shadow-2xl flex items-center gap-3 text-sm font-semibold">
-        <i class="fas fa-check-circle text-olive-400"></i>
-        <span id="toast-text">تم الإرسال بنجاح</span>
-    </div>
+        <!-- Mobile Overlay — separate from panel -->
+        <div id="mobile-overlay" class="mobile-overlay" onclick="closeMobile()"></div>
 
-    <!-- Mobile Overlay — separate from panel -->
-    <div id="mobile-overlay" class="mobile-overlay" onclick="closeMobile()"></div>
-
-    <!-- Mobile Panel — separate from overlay -->
-    <div id="mobile-panel" class="mobile-panel">
-        <div class="p-8">
-            <div class="flex items-center justify-between mb-12">
-                <span class="text-lg font-bold font-serif text-warm-800">القائمة</span>
-                <button onclick="closeMobile()" class="w-10 h-10 rounded-full border border-sand flex items-center justify-center hover:bg-cream transition-colors">
-                    <i class="fas fa-times text-warm-600"></i>
-                </button>
-            </div>
-            <nav class="space-y-1">
-                <a href="#hero" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الرئيسية</a>
-                <a href="#about" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">من نحن</a>
-                <a href="#services" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الخدمات</a>
-                <a href="#portfolio" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">أعمالنا</a>
-                <a href="#blog" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">المدونة</a>
-                <a href="#pricing" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسعار</a>
-                <a href="#faq" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسئلة الشائعة</a>
-                <a href="#careers" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">التوظيف</a>
-                <a href="#contact" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">تواصل معنا</a>
-            </nav>
-            <div class="mt-10 pt-8 border-t border-sand">
-                <a href="#quote" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
+        <!-- Mobile Panel — separate from overlay -->
+        <div id="mobile-panel" class="mobile-panel">
+            <div class="p-8">
+                <div class="flex items-center justify-between mb-12">
+                    <span class="text-lg font-bold font-serif text-warm-800">القائمة</span>
+                    <button onclick="closeMobile()" class="w-10 h-10 rounded-full border border-sand flex items-center justify-center hover:bg-cream transition-colors">
+                        <i class="fas fa-times text-warm-600"></i>
+                    </button>
+                </div>
+                <nav class="space-y-1">
+                    <a href="#hero" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الرئيسية</a>
+                    <a href="#about" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">من نحن</a>
+                    <a href="#services" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الخدمات</a>
+                    <a href="#portfolio" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">أعمالنا</a>
+                    <a href="#blog" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">المدونة</a>
+                    <a href="#pricing" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسعار</a>
+                    <a href="#faq" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسئلة الشائعة</a>
+                    <a href="#careers" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">التوظيف</a>
+                    <a href="#contact" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">تواصل معنا</a>
+                </nav>
+                <div class="mt-10 pt-8 border-t border-sand">
+                    <a href="#quote" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-500">
-        <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="flex items-center justify-between h-20 md:h-24">
-                <!-- Logo -->
-                <a href="#" class="logo flex items-center gap-2">
-                    @if($setting->logo)
-                    <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-20 w-auto">
-                    @else
-                    <i class="fas fa-utensils text-[#E60914]"></i>
-                    @endif
-                </a>
+        <!-- Navigation -->
+        <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-500">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12">
+                <div class="flex items-center justify-between h-20 md:h-24">
+                    <!-- Logo -->
+                    <a href="#" class="logo flex items-center gap-2">
+                        @if($setting->logo)
+                        <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-20 w-auto">
+                        @else
+                        <i class="fas fa-utensils text-[#E60914]"></i>
+                        @endif
+                    </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="#hero" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الرئيسية</a>
-                    <a href="#about" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">من نحن</a>
-                    <div class="mega-trigger relative">
-                        <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">الخدمات <i class="fas fa-chevron-down text-[8px]"></i></button>
-                        <div class="mega-panel absolute top-full right-0 pt-4" style="width:640px">
-                            <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-print"></i></div>
-                                    <div><span class="text-sm font-bold">الطباعة الديجيتال</span><span class="block text-[11px] text-warm-400">طباعة عالية الجودة</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-palette"></i></div>
-                                    <div><span class="text-sm font-bold">الهوية البصرية</span><span class="block text-[11px] text-warm-400">تصميم هويات مميزة</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-olive-100 text-olive-600 flex items-center justify-center group-hover:bg-olive-600 group-hover:text-white transition-all text-sm"><i class="fas fa-hashtag"></i></div>
-                                    <div><span class="text-sm font-bold">السوشيال ميديا</span><span class="block text-[11px] text-warm-400">محتوى إبداعي</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-sign-hanging"></i></div>
-                                    <div><span class="text-sm font-bold">اللوحات الإعلانية</span><span class="block text-[11px] text-warm-400">لوحات وإيفنتات</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-gift"></i></div>
-                                    <div><span class="text-sm font-bold">الهدايا الدعائية</span><span class="block text-[11px] text-warm-400">هدايا إبداعية</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-olive-100 text-olive-600 flex items-center justify-center group-hover:bg-olive-600 group-hover:text-white transition-all text-sm"><i class="fas fa-box-open"></i></div>
-                                    <div><span class="text-sm font-bold">التغليف والعبوات</span><span class="block text-[11px] text-warm-400">تصميم تغليف احترافي</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-expand"></i></div>
-                                    <div><span class="text-sm font-bold">الطباعة الكبيرة</span><span class="block text-[11px] text-warm-400">مقاسات واسعة</span></div>
-                                </a>
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-bullhorn"></i></div>
-                                    <div><span class="text-sm font-bold">الحملات التسويقية</span><span class="block text-[11px] text-warm-400">حملات متكاملة</span></div>
-                                </a>
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center gap-8">
+                        <a href="{{ route('home') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الرئيسية</a>
+                        <a href="{{ route('about') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">من نحن</a>
+                        <div class="mega-trigger relative">
+                            <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">الخدمات <i class="fas fa-chevron-down text-[8px]"></i></button>
+                            <div class="mega-panel absolute top-full right-0 pt-4" style="width:640px">
+                                <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-print"></i></div>
+                                        <div><span class="text-sm font-bold">الطباعة الديجيتال</span><span class="block text-[11px] text-warm-400">طباعة عالية الجودة</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-palette"></i></div>
+                                        <div><span class="text-sm font-bold">الهوية البصرية</span><span class="block text-[11px] text-warm-400">تصميم هويات مميزة</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-olive-100 text-olive-600 flex items-center justify-center group-hover:bg-olive-600 group-hover:text-white transition-all text-sm"><i class="fas fa-hashtag"></i></div>
+                                        <div><span class="text-sm font-bold">السوشيال ميديا</span><span class="block text-[11px] text-warm-400">محتوى إبداعي</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-sign-hanging"></i></div>
+                                        <div><span class="text-sm font-bold">اللوحات الإعلانية</span><span class="block text-[11px] text-warm-400">لوحات وإيفنتات</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-gift"></i></div>
+                                        <div><span class="text-sm font-bold">الهدايا الدعائية</span><span class="block text-[11px] text-warm-400">هدايا إبداعية</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-olive-100 text-olive-600 flex items-center justify-center group-hover:bg-olive-600 group-hover:text-white transition-all text-sm"><i class="fas fa-box-open"></i></div>
+                                        <div><span class="text-sm font-bold">التغليف والعبوات</span><span class="block text-[11px] text-warm-400">تصميم تغليف احترافي</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-terracotta/10 text-terracotta flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-all text-sm"><i class="fas fa-expand"></i></div>
+                                        <div><span class="text-sm font-bold">الطباعة الكبيرة</span><span class="block text-[11px] text-warm-400">مقاسات واسعة</span></div>
+                                    </a>
+                                    <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                        <div class="w-9 h-9 rounded-lg bg-brand-blue/10 text-brand-blue flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all text-sm"><i class="fas fa-bullhorn"></i></div>
+                                        <div><span class="text-sm font-bold">الحملات التسويقية</span><span class="block text-[11px] text-warm-400">حملات متكاملة</span></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+                        <a href="{{ route('portfolio') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">أعمالنا</a>
+                        <a href="#blog" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">المدونة</a>
+                        <a href="{{ route('careers') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الوظايف</a>
+                        <a href="#contact" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
                     </div>
-                    <a href="#portfolio" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">أعمالنا</a>
-                    <a href="#blog" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">المدونة</a>
-                    <a href="#contact" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
+                    <div class="hidden lg:flex items-center gap-4">
+                        <a href="#quote" class="px-6 py-2.5 bg-terracotta text-ivory text-sm font-bold rounded-full hover:bg-warm-800 transition-all duration-300">اطلب عرض سعر</a>
+                    </div>
+                    <!-- Mobile Toggle -->
+                    <button id="menu-toggle-btn" onclick="openMobile()" class="lg:hidden w-10 h-10 flex items-center justify-center text-warm-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="#quote" class="px-6 py-2.5 bg-terracotta text-ivory text-sm font-bold rounded-full hover:bg-warm-800 transition-all duration-300">اطلب عرض سعر</a>
-                </div>
-                <!-- Mobile Toggle -->
-                <button id="menu-toggle-btn" onclick="openMobile()" class="lg:hidden w-10 h-10 flex items-center justify-center text-warm-700">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
             </div>
-        </div>
-    </nav>
+        </nav>

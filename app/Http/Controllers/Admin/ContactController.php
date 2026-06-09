@@ -36,7 +36,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|email',
             'phone'   => 'nullable|string|max:20',
@@ -44,11 +44,9 @@ class ContactController extends Controller
             'msg'     => 'required|string',
         ]);
 
-        $contact = Contact::create($request->all());
+        $contact = Contact::create($validated);
 
-        $ownerEmail = env('MAIL_OWNER', 'default@example.com');
-
-        Mail::to($ownerEmail)->send(new ContactMail($contact));
+         Mail::to('avora.fun.eg@gmail.com')->send(new ContactMail($contact));
 
         return redirect()->back()->with('status', 'تم إرسال رسالتك بنجاح!');
     }

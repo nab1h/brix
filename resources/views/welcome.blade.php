@@ -18,40 +18,21 @@
     </div>
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 py-32 md:py-0 w-full">
         <div class="max-w-2xl">
-
-            @php
-            function highlightWord($text, $position = -2, $class = 'text-terracotta') {
-            $words = explode(' ', $text);
-
-            if (abs($position) > count($words)) {
-            return $text;
-            }
-
-            $index = $position < 0
-                ? count($words) + $position
-                : $position;
-
-                $words[$index]='<span class="' .$class.'">'.$words[$index].'</span>';
-
-                return implode(' ', $words);
-                }
-                @endphp
-
-                <h1 class="reveal reveal-delay-1 font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-warm-900 mb-8">
-                    {!! highlightWord(" $content->hero_title_ar ", -2) !!}
-                </h1>
-                <p class="reveal reveal-delay-2 text-lg md:text-xl text-warm-500 leading-relaxed mb-12 max-w-lg font-light">
-                    في Brix، نؤمن بأن كل فكرة تستحق أن تُرى بأفضل صورة. نحن لا نطبع فقط — نصنع تجارب بصرية تترك أثراً دائماً.
-                </p>
-                <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
-                    <a href="#quote" class="group inline-flex items-center gap-3 px-8 py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-400">
-                        اطلب عرض سعر
-                        <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:-translate-x-1 transition-transform"><i class="fas fa-arrow-left text-xs"></i></span>
-                    </a>
-                    <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-warm-300 text-warm-700 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
-                        اكتشف المزيد
-                    </a>
-                </div>
+            <h1 class="reveal reveal-delay-1 font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] text-warm-900 mb-8">
+                {!! highlightWord(" $content->hero_title_ar ", -2) !!}
+            </h1>
+            <p class="reveal reveal-delay-2 text-lg md:text-xl text-warm-500 leading-relaxed mb-12 max-w-lg font-light">
+                في Brix، نؤمن بأن كل فكرة تستحق أن تُرى بأفضل صورة. نحن لا نطبع فقط — نصنع تجارب بصرية تترك أثراً دائماً.
+            </p>
+            <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+                <a href="#quote" class="group inline-flex items-center gap-3 px-8 py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-400">
+                    اطلب عرض سعر
+                    <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:-translate-x-1 transition-transform"><i class="fas fa-arrow-left text-xs"></i></span>
+                </a>
+                <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-warm-300 text-warm-700 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
+                    اكتشف المزيد
+                </a>
+            </div>
         </div>
     </div>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-warm-400">
@@ -85,32 +66,7 @@
 
 
 <!-- ABOUT -->
-<section id="about" class="py-24 md:py-40">
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div class="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
-            @php
-            $image = ($galleryImages && $galleryImages->first()?->path)
-            ? asset('storage/' . $galleryImages->first()->path)
-            : 'https://picsum.photos/seed/brix-workshop/800/1000.jpg';
-            @endphp
-
-            <div class="reveal img-reveal rounded-2xl overflow-hidden">
-                <img src="{{ $image }}" alt="ورشة العمل" class="w-full aspect-[4/5] object-cover">
-            </div>
-            <div>
-                <div class="reveal"><span class="text-terracotta text-sm font-bold tracking-[0.15em]">فلسفتنا</span></div>
-                <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold leading-[1.2] text-warm-900 mt-4 mb-8">{!! highlightWord(" $content->about_title_ar ", -2) !!}</h2>
-                <p class="reveal reveal-delay-2 text-warm-500 text-lg leading-[1.9] mb-6">{{ $content->about_desc_ar }}</p>
-                <div class="reveal reveal-delay-4 flex gap-12">
-                    @forelse($stats as $index => $item)
-                    <div><span class="text-4xl font-serif font-bold text-terracotta counter-num" data-target="{{ $item->number }}">0</span><span class="block text-sm text-warm-400 mt-1">{{ $item->title_ar }}</span></div>
-                    @empty
-                    @endforelse
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+@include(' includes.about')
 
 
 <!-- VALUES -->
@@ -602,165 +558,8 @@
 
 
 <!-- CAREERS -->
-<section id="careers" class="py-24 md:py-40 relative overflow-hidden">
-    <!-- Dark Background -->
-    <div class="absolute inset-0">
-        <img src="careres.jpg" alt="" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-warm-600/80"></div>
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/20 via-transparent to-terracotta/10"></div>
-    </div>
 
-    <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <div class="text-center mb-20">
-            <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">التوظيف</span>
-            <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-ivory mt-4">انضم لفريق <span class="text-terracotta">Brix</span></h2>
-            <p class="reveal reveal-delay-2 text-warm-300 text-lg mt-4 max-w-xl mx-auto">نبحث دائماً عن مواهب شغوفة تنضم لرحلتنا الإبداعية</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-            <!-- Job Card 1 -->
-            <div class="reveal card-lift group">
-                <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-6 md:p-8 hover:border-terracotta/30 hover:bg-white/[0.09] transition-all duration-500 h-full flex flex-col shadow-2xl">
-                    <!-- Header Tags -->
-                    <div class="flex items-center gap-2 mb-5">
-                        <span class="px-3 py-1.5 rounded-lg bg-olive-400/15 text-olive-200 text-[11px] font-bold tracking-wide backdrop-blur-sm">التصميم</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-terracotta/20 text-terracotta text-[11px] font-bold tracking-wide backdrop-blur-sm">دوام كامل</span>
-                    </div>
-                    <!-- Title -->
-                    <h3 class="font-serif text-2xl font-bold text-ivory mb-3 group-hover:text-terracotta transition-colors">مصمم جرافيك أول</h3>
-                    <!-- Description -->
-                    <p class="text-sm text-warm-300 leading-relaxed mb-6 flex-grow">خبرة ٥+ سنوات في التصميم الإبداعي والهويات البصرية، إجادة تامة لـ Adobe Creative Suite والقدرة على قيادة فريق تصميم.</p>
-                    <!-- Meta -->
-                    <div class="flex items-center gap-5 text-xs text-warm-400 mb-6">
-                        <div class="flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-terracotta/70"></i> الرياض</div>
-                        <div class="flex items-center gap-1.5"><i class="fas fa-briefcase text-olive-400/70"></i> ٥+ سنوات</div>
-                    </div>
-                    <!-- Employee Cell -->
-                    <div class="border-t border-white/[0.06] pt-5">
-                        <div class="flex items-center justify-between">
-                            <a href="#quote" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-terracotta text-ivory text-xs font-bold hover:bg-ivory hover:text-warm-800 transition-all duration-300 group/btn">
-                                قدم الآن <i class="fas fa-arrow-left text-[10px] group-hover/btn:-translate-x-0.5 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job Card 2 -->
-            <div class="reveal reveal-delay-1 card-lift group">
-                <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-6 md:p-8 hover:border-terracotta/30 hover:bg-white/[0.09] transition-all duration-500 h-full flex flex-col shadow-2xl">
-                    <div class="flex items-center gap-2 mb-5">
-                        <span class="px-3 py-1.5 rounded-lg bg-brand-blue/20 text-blue-300 text-[11px] font-bold tracking-wide backdrop-blur-sm">التسويق</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-terracotta/20 text-terracotta text-[11px] font-bold tracking-wide backdrop-blur-sm">دوام كامل</span>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-ivory mb-3 group-hover:text-terracotta transition-colors">أخصائي تسويق رقمي</h3>
-                    <p class="text-sm text-warm-300 leading-relaxed mb-6 flex-grow">إدارة الحملات الإعلانية على المنصات المختلفة وتحليل البيانات لتحسين الأداء وزيادة العائد على الاستثمار.</p>
-                    <div class="flex items-center gap-5 text-xs text-warm-400 mb-6">
-                        <div class="flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-terracotta/70"></i> الرياض</div>
-                        <div class="flex items-center gap-1.5"><i class="fas fa-briefcase text-olive-400/70"></i> ٣+ سنوات</div>
-                    </div>
-                    <div class="border-t border-white/[0.06] pt-5">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="flex -space-x-2 rtl:space-x-reverse">
-                                    <img src="https://picsum.photos/seed/emp-mkt1/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <img src="https://picsum.photos/seed/emp-mkt2/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <div class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border-2 border-warm-800 text-warm-300 text-[10px] font-bold">+2</div>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-warm-200 block leading-tight">فريق التسويق</span>
-                                    <span class="text-[10px] text-warm-400">٤ أعضاء</span>
-                                </div>
-                            </div>
-                            <a href="#quote" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-terracotta text-ivory text-xs font-bold hover:bg-ivory hover:text-warm-800 transition-all duration-300 group/btn">
-                                قدم الآن <i class="fas fa-arrow-left text-[10px] group-hover/btn:-translate-x-0.5 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job Card 3 -->
-            <div class="reveal card-lift group">
-                <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-6 md:p-8 hover:border-olive-400/30 hover:bg-white/[0.09] transition-all duration-500 h-full flex flex-col shadow-2xl">
-                    <div class="flex items-center gap-2 mb-5">
-                        <span class="px-3 py-1.5 rounded-lg bg-olive-400/15 text-olive-200 text-[11px] font-bold tracking-wide backdrop-blur-sm">الإنتاج</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-terracotta/20 text-terracotta text-[11px] font-bold tracking-wide backdrop-blur-sm">دوام كامل</span>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-ivory mb-3 group-hover:text-olive-200 transition-colors">مشرف طباعة</h3>
-                    <p class="text-sm text-warm-300 leading-relaxed mb-6 flex-grow">خبرة واسعة في أجهزة الطباعة الديجيتال الكبيرة والصغيرة مع القدرة على إدارة فريق وتحقيق أهداف الإنتاج اليومية.</p>
-                    <div class="flex items-center gap-5 text-xs text-warm-400 mb-6">
-                        <div class="flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-terracotta/70"></i> الرياض</div>
-                        <div class="flex items-center gap-1.5"><i class="fas fa-briefcase text-olive-400/70"></i> ٧+ سنوات</div>
-                    </div>
-                    <div class="border-t border-white/[0.06] pt-5">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="flex -space-x-2 rtl:space-x-reverse">
-                                    <img src="https://picsum.photos/seed/emp-prod1/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <img src="https://picsum.photos/seed/emp-prod2/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <img src="https://picsum.photos/seed/emp-prod3/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <div class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border-2 border-warm-800 text-warm-300 text-[10px] font-bold">+8</div>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-warm-200 block leading-tight">فريق الإنتاج</span>
-                                    <span class="text-[10px] text-warm-400">١١ عضو</span>
-                                </div>
-                            </div>
-                            <a href="#quote" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-olive-600 text-ivory text-xs font-bold hover:bg-ivory hover:text-warm-800 transition-all duration-300 group/btn">
-                                قدم الآن <i class="fas fa-arrow-left text-[10px] group-hover/btn:-translate-x-0.5 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job Card 4 -->
-            <div class="reveal reveal-delay-1 card-lift group">
-                <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-6 md:p-8 hover:border-brand-blue/30 hover:bg-white/[0.09] transition-all duration-500 h-full flex flex-col shadow-2xl">
-                    <div class="flex items-center gap-2 mb-5">
-                        <span class="px-3 py-1.5 rounded-lg bg-brand-blue/20 text-blue-300 text-[11px] font-bold tracking-wide backdrop-blur-sm">الإدارة</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-terracotta/20 text-terracotta text-[11px] font-bold tracking-wide backdrop-blur-sm">دوام كامل</span>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-ivory mb-3 group-hover:text-blue-300 transition-colors">مدير مشاريع</h3>
-                    <p class="text-sm text-warm-300 leading-relaxed mb-6 flex-grow">إدارة مشاريع الطباعة والتصميم من البداية حتى التسليم مع مهارات تواصل ممتازة والقدرة على التعامل مع العملاء مباشرة.</p>
-                    <div class="flex items-center gap-5 text-xs text-warm-400 mb-6">
-                        <div class="flex items-center gap-1.5"><i class="fas fa-map-marker-alt text-terracotta/70"></i> جدة</div>
-                        <div class="flex items-center gap-1.5"><i class="fas fa-briefcase text-olive-400/70"></i> ٤+ سنوات</div>
-                    </div>
-                    <div class="border-t border-white/[0.06] pt-5">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="flex -space-x-2 rtl:space-x-reverse">
-                                    <img src="https://picsum.photos/seed/emp-pm1/80/80.jpg" class="w-9 h-9 rounded-full border-2 border-warm-800 object-cover" alt="">
-                                    <div class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border-2 border-warm-800 text-warm-300 text-[10px] font-bold">+1</div>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold text-warm-200 block leading-tight">فريق العمليات</span>
-                                    <span class="text-[10px] text-warm-400">٢ عضو</span>
-                                </div>
-                            </div>
-                            <a href="#quote" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-blue text-ivory text-xs font-bold hover:bg-ivory hover:text-warm-800 transition-all duration-300 group/btn">
-                                قدم الآن <i class="fas fa-arrow-left text-[10px] group-hover/btn:-translate-x-0.5 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Bottom CTA -->
-        <div class="reveal text-center mt-14">
-            <p class="text-warm-300 text-sm mb-5">لم تجد الوظيفة المناسبة؟ أرسل سيرتك الذاتية وسنتواصل معك عند توفر فرصة</p>
-            <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/15 text-warm-200 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
-                <i class="fas fa-envelope text-sm"></i> أرسل سيرتك الذاتية
-            </a>
-        </div>
-    </div>
-</section>
-
+@include('includes.careers')
 
 <!-- CTA -->
 <section class="py-24 md:py-32 relative overflow-hidden">
@@ -824,9 +623,9 @@
                 </div>
             </div>
             <div class="lg:col-span-3">
-                <form action="{{ route('frontend.contact.store') }}" method="POST" onsubmit="submitForm(event)" class="reveal bg-ivory border border-sand rounded-2xl p-8 md:p-10 space-y-5">
+                <form action="{{ route('frontend.contact.store') }}" method="POST" class="reveal bg-ivory border border-sand rounded-2xl p-8 md:p-10 space-y-5">
 
-                    @csrf {{-- ضروري جداً لحماية الفورم في لارافل --}}
+                    @csrf
 
                     {{-- رسالة النجاح --}}
                     @if (session('status'))
@@ -852,7 +651,7 @@
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label class="block text-sm font-bold text-warm-700 mb-2">الهاتف</label>
-                            <input name="phone" type="tel" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="+966 5X XXX XXXX">
+                            <input name="phone" type="tel" value="{{ old('phone') }}" class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/50 text-sm focus:border-terracotta outline-none" placeholder="+20 1X XXX XXXX">
                         </div>
 
                         <div>
@@ -861,6 +660,7 @@
                                 <option value="استفسار عام" {{ old('subject') == 'استفسار عام' ? 'selected' : '' }}>استفسار عام</option>
                                 <option value="طلب عرض سعر" {{ old('subject') == 'طلب عرض سعر' ? 'selected' : '' }}>طلب عرض سعر</option>
                                 <option value="متابعة طلب" {{ old('subject') == 'متابعة طلب' ? 'selected' : '' }}>متابعة طلب</option>
+                                <option value="توظيف" {{ old('career') == 'توظيف' ? 'selected' : '' }}>توظيف</option>
                             </select>
                         </div>
                     </div>
@@ -893,12 +693,12 @@
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-4xl font-bold text-warm-900 mt-4">أخبرنا عن <span class="text-terracotta">مشروعك</span></h2>
             <p class="reveal reveal-delay-2 text-warm-500 mt-3">املأ النموذج وسنقدم لك عرض سعر مخصص خلال ٢٤ ساعة</p>
         </div>
-        <form action="{{ route('reservations.store') }}" method="POST" class="reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
-            @if(session('status'))
-            <div style=" margin-bottom: 20px; background: #D4AF37; color: #000; padding: 15px 25px; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-                {{ session('status') }}
-            </div>
-            @endif
+        <div id="toast"
+            class="fixed top-5 left-5 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg z-50 hidden">
+            <span id="toast-text"></span>
+        </div>
+
+        <form id="reservation-form" action="{{ route('reservations.store') }}" method="POST" class="reveal bg-ivory/80 backdrop-blur-sm border border-sand rounded-2xl p-8 md:p-10 space-y-5 shadow-2xl">
             @csrf
             <div class="grid sm:grid-cols-2 gap-5">
                 <div><label class="block text-sm font-bold text-warm-700 mb-2">الاسم *</label><input name="name" type="text" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all"></div>
@@ -911,18 +711,15 @@
             <div><label class="block text-sm font-bold text-warm-700 mb-2">نوع الخدمة *</label>
                 <select name="category" required class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all">
                     <option value="">اختر نوع الخدمة</option>
-                    <option>الطباعة الديجيتال</option>
-                    <option>تصميم الهوية البصرية</option>
-                    <option>تصميم السوشيال ميديا</option>
-                    <option>اللوحات الإعلانية</option>
-                    <option>الهدايا الدعائية</option>
-                    <option>التغليف والعبوات</option>
-                    <option>الطباعة بمقاسات كبيرة</option>
-                    <option>الحملات التسويقية</option>
+                    @foreach ($categories as $category)
+                    <option>{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </div>
             <button type="submit" class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2"><i class="fas fa-paper-plane text-sm"></i> إرسال طلب عرض السعر</button>
         </form>
+
+
     </div>
 </section>
 @include('includes.footer')

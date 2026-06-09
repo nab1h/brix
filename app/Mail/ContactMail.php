@@ -21,7 +21,7 @@ class ContactMail extends Mailable
 
     public function build()
     {
-        return $this->subject('رسالة تواصل جديدة: ' . $this->contact->subject)
+        return $this->subject('رسالة تواصل جديدة من: ' . $this->contact->name)
             ->view('emails.contact-template');
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Mail\ReservationMail;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationController extends Controller
 {
@@ -89,7 +91,11 @@ class ReservationController extends Controller
         $validated['is_archive'] = 0;
         $validated['is_delete'] = 0;
 
-        Reservation::create($validated);
+        $reservation = Reservation::create($validated);
+
+        // إرسال الإيميل
+        $ownerEmail = config('mail.MAIL_OWNER', 'avora.fun.eg@gmail.com');
+        Mail::to($ownerEmail)->send(new ReservationMail($reservation));
 
         return response()->json([
             'success' => true,
@@ -126,9 +132,15 @@ class ReservationController extends Controller
 
         $reservation->update($validated);
 
-        return redirect()
-            ->route('reservations.index')
-            ->with('status', 'تم تحديث الحجز بنجاح!');
+
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'تم إرسال الطلب بنجاح ✨'
+            ]);
+        }
+
+        return back()->with('status', 'تم إرسال الطلب بنجاح');
     }
 
     // =========================

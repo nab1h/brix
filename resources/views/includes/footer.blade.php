@@ -444,6 +444,71 @@
      });
 
 
+
+     document.getElementById('reservation-form').addEventListener('submit', function(e) {
+         e.preventDefault();
+
+         const form = this;
+         const btn = form.querySelector('button[type="submit"]');
+         const btnHTML = btn.innerHTML;
+
+         const toast = document.getElementById('toast');
+         const toastText = document.getElementById('toast-text');
+
+         btn.disabled = true;
+         btn.innerHTML = 'جاري الإرسال...';
+
+         const formData = new FormData(form);
+
+         fetch(form.action, {
+                 method: 'POST',
+                 body: formData,
+                 headers: {
+                     'X-Requested-With': 'XMLHttpRequest',
+                     'Accept': 'application/json'
+                 }
+             })
+             .then(async (response) => {
+
+                 const data = await response.json();
+
+                 if (!response.ok) {
+                     throw data;
+                 }
+
+                 return data;
+             })
+             .then(data => {
+
+                 form.reset();
+
+                 const toast = document.getElementById('toast');
+                 const toastText = document.getElementById('toast-text');
+
+                 toastText.textContent = data.message;
+
+                 toast.classList.add('show');
+                 toast.classList.remove('hidden');
+
+                 setTimeout(() => {
+                     toast.classList.remove('show');
+                 }, 3000);
+
+             })
+             .catch(error => {
+                 console.log(error);
+
+                 const toast = document.getElementById('toast');
+                 const toastText = document.getElementById('toast-text');
+
+                 toastText.textContent = error.message || 'حدث خطأ';
+                 toast.classList.remove('hidden');
+
+                 setTimeout(() => {
+                     toast.classList.add('hidden');
+                 }, 3000);
+             });
+     });
  </script>
 
  </body>

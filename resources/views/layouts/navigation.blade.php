@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('profile.index') }}">
-                        <img src="{{ asset('avora.png') }}" class="h-20 w-auto" alt="Logo" />
+                        <img src="{{ asset('avora.png') }}" class="h-10 w-auto" alt="Logo" />
                     </a>
                 </div>
 
@@ -109,6 +109,11 @@
                             <a href="{{ route('admin.faqs.index') }}"
                                 class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
                                 FAQs
+                            </a>
+
+                            <a href="{{ route('admin.careers.index') }}"
+                                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition">
+                                Careers
                             </a>
 
                         </div>

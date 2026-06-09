@@ -3,5 +3,4 @@
 
 @section('content')
 @include('includes.portfolio')
-<h1>TEST</h1>
 @endsection

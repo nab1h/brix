@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\ProfileController;
@@ -18,17 +19,20 @@ use App\Http\Controllers\Admin\HomeContentController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::post('/contact', [ContactController::class, 'store'])->name('frontend.contact.store');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
-Route::get('/test-mail', function () {
-    \Illuminate\Support\Facades\Mail::raw('Test Email', function ($msg) {
-        $msg->to('avora.fun.eg@gmail.com')
-            ->subject('Test');
-    });
 
-    return 'sent';
-});
+// Route::get('/test-mail', function () {
+//     \Illuminate\Support\Facades\Mail::raw('Test Email', function ($msg) {
+//         $msg->to('avora.fun.eg@gmail.com')
+//             ->subject('Test');
+//     });
+
+//     return 'sent';
+// });
 
 
 Route::middleware('auth')->group(
@@ -82,6 +86,7 @@ Route::middleware('auth')->group(
                 Route::resource('portfolios', PortfolioController::class);
                 Route::resource('contacts', ContactController::class)->except(['create', 'edit', 'update', 'show']);
                 Route::get('contacts/{contact}/read', [ContactController::class, 'markAsRead'])->name('contacts.read');
+                Route::resource('careers', CareerController::class);
             });
         });
 
