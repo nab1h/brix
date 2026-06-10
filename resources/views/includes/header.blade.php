@@ -310,6 +310,17 @@
             }
         }
 
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* image bg pages */
 
         .contact-bg-form {
@@ -420,7 +431,36 @@
             background-size: 90%;
         }
 
-        
+        .brand-bg {
+            background-image: url('/bg/subscribe-bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 300px;
+            border: 3px solid red;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -492,6 +532,31 @@
                     </div>
                     <a href="{{ route('portfolio') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">أعمالنا</a>
                     <a href="#blog" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">المدونة</a>
+                    <div class="mega-trigger relative">
+                        <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">شركاء النجاح <i class="fas fa-chevron-down text-[8px]"></i></button>
+                        <div class="mega-panel absolute top-full right-0" style="width:640px">
+                            <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
+                                @foreach ($allBrands as $brand)
+                                <a href="{{ route('brand.show', $brand->slug) }}" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+
+                                    @if($brand->image)
+                                    <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="w-20 h-20 rounded-lg object-cover bg-white p-1 border border-sand/50 flex-shrink-0">
+                                    @else
+                                    <div class="w-10 h-10 rounded-lg bg-cream flex items-center justify-center border border-sand/50 flex-shrink-0">
+                                        <i class="fas fa-building text-warm-400 text-sm"></i>
+                                    </div>
+                                    @endif
+
+                                    <div class="min-w-0">
+                                        <span class="text-sm font-bold text-warm-800 group-hover:text-terracotta transition-colors">{{ $brand->name }}</span>
+                                        <span class="block text-[11px] text-warm-400 line-clamp-1">{{ $brand->info }}</span>
+                                    </div>
+
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                     <a href="{{ route('careers') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الوظايف</a>
                     <a href="#contact" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
                 </div>

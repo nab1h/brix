@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\Brand;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
@@ -23,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('setting', Setting::first());
         View::share('categories', Category::all());
+        View::share('allBrands', Brand::all());
+
     }
 }

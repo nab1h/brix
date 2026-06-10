@@ -7,6 +7,7 @@ use App\Models\Setting;
 use App\Models\HomeContent;
 use App\Models\Faq;
 use App\Models\Media;
+use App\Models\Article;
 use App\Models\Career;
 use App\Models\Category;
 use App\Models\Statistic;
@@ -51,8 +52,14 @@ class HomeController extends Controller
         $galleryImages = Media::where('type', 'gallery_image')->where('is_active', true)->ordered()->get();
         return view('pages.about', compact('galleryImages', 'content', 'stats'));
     }
-    public function portfolio(){
-        return view('pages.portfolio');
+    public function portfolio(Request $request){
+        $query = Portfolio::with(['brand', 'category']);
+
+        if ($request->filled('cat_id')) {
+            $query->where('cat_id', $request->cat_id);
+        }
+        $portfolios = $query->latest()->get();
+        return view('pages.portfolio',compact('portfolios'));
     }
 
     // careers
@@ -62,4 +69,28 @@ class HomeController extends Controller
         return view('pages.careers', compact('careers'));
     }
 
+    public function showBrand(Brand $brand)
+    {
+        $allBrands = Brand::whereHas('portfolios')->get();
+
+        $brand->load(['portfolios', 'portfolios.category']);
+
+        return view('pages.brand-show', compact('brand', 'allBrands'));
+    }
+
+
+    public function articlesIndex()
+    {
+        $articles = Article::latest()->paginate(6);
+        return view('pages.articles.index', compact('articles'));
+    }
+
+    public function articlesShow(Article $article)
+    {
+        $latestArticles = Article::where('id', '!=', $article->id)
+            ->latest()
+            ->take(5)
+            ->get();
+        return view('pages.articles.show', compact('article', 'latestArticles'));
+    }
 }

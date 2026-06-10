@@ -2,9 +2,10 @@
 <!-- ===== DYNAMIC HERO LAYOUT ===== -->
 <section id="page-hero" class="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat">
 
-    <!-- Dynamic Background Image -->
-    <div id="hero-bg" class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000" style="background-image: url('https://picsum.photos/seed/hero-home-brix/1600/1000.jpg')"></div>
-
+    <div id="hero-bg"
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000"
+        style="background-image: url('@yield('hero_image', 'https://picsum.photos/seed/hero-home-brix/1600/1000.jpg')')">
+    </div>
 
     <!-- White Fade For Navbar -->
     <div class="absolute top-0 left-0 right-0 h-60 bg-gradient-to-b from-white/90 via-white/30 to-transparent z-[1]"></div>
