@@ -531,7 +531,8 @@
                         </div>
                     </div>
                     <a href="{{ route('portfolio') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">أعمالنا</a>
-                    <a href="#blog" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">المدونة</a>
+                    <a href="{{ route('articles.index') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">المقالات</a>
+
                     <div class="mega-trigger relative">
                         <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">شركاء النجاح <i class="fas fa-chevron-down text-[8px]"></i></button>
                         <div class="mega-panel absolute top-full right-0" style="width:640px">

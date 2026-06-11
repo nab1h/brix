@@ -41,7 +41,8 @@ class HomeController extends Controller
 
         $brands = Brand::all();
 
-        return view('welcome',compact('portfolios', 'brands' ,'categories','careers','stats', 'content', 'faqs',  'heroVideo', 'heroImage', 'galleryImages', 'testimonials'));
+        $articles = Article::latest()->paginate(6);
+        return view('welcome',compact('portfolios','articles', 'brands' ,'categories','careers','stats', 'content', 'faqs',  'heroVideo', 'heroImage', 'galleryImages', 'testimonials'));
     }
 
 
