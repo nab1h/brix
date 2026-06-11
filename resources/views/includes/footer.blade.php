@@ -1,10 +1,10 @@
  <!-- FOOTER -->
  <footer class="footer-bg bg-warm-50 text-warm-200 pt-20 pb-8">
      <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+         <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
              <div>
                  <div class="flex items-center gap-3 mb-6">
-                     <a href="#" class="footer-logo flex items-center justify-center gap-2">
+                     <a href="{{ route('home') }}" class="footer-logo flex items-center justify-center gap-2">
                          @if($setting->logo)
                          <img src="{{ asset('storage/' . $setting->logo) }}" class="h-20 w-auto">
                          @endif
@@ -33,21 +33,28 @@
              <div>
                  <h4 class="font-serif text-lg font-bold text-ivory mb-6">روابط سريعة</h4>
                  <ul class="space-y-3">
-                     <li><a href="#about" class="text-sm text-warm-400 hover:text-terracotta transition-colors">من نحن</a></li>
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الخدمات</a></li>
-                     <li><a href="#portfolio" class="text-sm text-warm-400 hover:text-terracotta transition-colors">أعمالنا</a></li>
-                     <li><a href="#blog" class="text-sm text-warm-400 hover:text-terracotta transition-colors">المدونة</a></li>
-                     <li><a href="#pricing" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الأسعار</a></li>
+                     <li><a href="{{ route('about') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">من نحن</a></li>
+                     <li><a href="{{ route('services') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الخدمات</a></li>
+                     <li><a href="{{ route('portfolio') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">أعمالنا</a></li>
+                     <li><a href="{{ route('articles.index') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">المدونة</a></li>
+                     <li><a href="{{ route('quote') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الأسعار</a></li>
+                 </ul>
+             </div>
+             <div>
+                 <h4 class="font-serif text-lg font-bold text-ivory mb-6">شركاء النجاح</h4>
+                 <ul class="space-y-3">
+                     @foreach ($allBrands as $brand)
+                     <li><a href="{{ route('brand.show',$brand->slug) }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $brand->name }}</a></li>
+                     @endforeach
                  </ul>
              </div>
              <div>
                  <h4 class="font-serif text-lg font-bold text-ivory mb-6">خدماتنا</h4>
                  <ul class="space-y-3">
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الطباعة الديجيتال</a></li>
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الهوية البصرية</a></li>
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">اللوحات الإعلانية</a></li>
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">التغليف والعبوات</a></li>
-                     <li><a href="#services" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الحملات التسويقية</a></li>
+                     @foreach ($categories as $category)
+                     <li><a href="{{ route('services') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $category->name }}</a></li>
+                     @endforeach
+
                  </ul>
              </div>
              <div>

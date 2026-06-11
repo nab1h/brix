@@ -22,6 +22,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
 Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/quote', [HomeController::class, 'quote'])->name('quote');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/articles', [HomeController::class, 'articlesIndex'])->name('articles.index');
 Route::get('/articles/{article}', [HomeController::class, 'articlesShow'])->name('articles.show');
 Route::get('/brands/{brand}', [HomeController::class, 'showBrand'])->name('brand.show');
@@ -29,16 +32,6 @@ Route::get('/services/{services}', [HomeController::class, 'showServices'])->nam
 Route::post('/contact', [ContactController::class, 'store'])->name('frontend.contact.store');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 Route::post('/testimonials', [TestimonialController::class, 'store'])->name('testimonials.store');
-
-// Route::get('/test-mail', function () {
-//     \Illuminate\Support\Facades\Mail::raw('Test Email', function ($msg) {
-//         $msg->to('avora.fun.eg@gmail.com')
-//             ->subject('Test');
-//     });
-
-//     return 'sent';
-// });
-
 
 Route::middleware('auth')->group(
     function () {

@@ -70,6 +70,8 @@ class HomeController extends Controller
         return view('pages.careers', compact('careers'));
     }
 
+    // Brand===========
+
     public function showBrand(Brand $brand)
     {
         $allBrands = Brand::whereHas('portfolios')->get();
@@ -80,6 +82,7 @@ class HomeController extends Controller
     }
 
 
+    // articles===========
     public function articlesIndex()
     {
         $articles = Article::latest()->paginate(6);
@@ -94,4 +97,22 @@ class HomeController extends Controller
             ->get();
         return view('pages.articles.show', compact('article', 'latestArticles'));
     }
+
+    // quote==============
+    public function quote(){
+        return view('pages.quote');
+    }
+
+    // contact==============
+     public function contact(){
+        return view('pages.contact');
+    }
+
+    // contact==============
+    public function services()
+    {
+        return view('pages.services');
+    }
+
+
 }

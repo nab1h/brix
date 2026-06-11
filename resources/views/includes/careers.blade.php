@@ -48,7 +48,7 @@
         <!-- Bottom CTA -->
         <div class="reveal text-center mt-14">
             <p class="text-warm-300 text-sm mb-5">لم تجد الوظيفة المناسبة؟ أرسل سيرتك الذاتية وسنتواصل معك عند توفر فرصة</p>
-            <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/15 text-warm-200 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-white/15 text-warm-200 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
                 <i class="fas fa-envelope text-sm"></i> أرسل سيرتك الذاتية
             </a>
         </div>

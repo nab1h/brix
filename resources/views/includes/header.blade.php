@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $setting->site_title ?? 'Aurum | Fine Dining' }}</title>
+    <title>@yield('title', $setting->site_title ?? 'Brix | printer')</title>
 
     <meta name="description" content="{{ $setting->meta_description ?? 'Luxury Fine Dining Experience' }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -484,16 +484,67 @@
                 </button>
             </div>
             <nav class="space-y-1">
-                <a href="#hero" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الرئيسية</a>
-                <a href="#about" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">من نحن</a>
-                <a href="#services" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الخدمات</a>
-                <a href="#portfolio" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">أعمالنا</a>
-                <a href="#blog" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">المدونة</a>
-                <a href="#pricing" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسعار</a>
-                <a href="#faq" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الأسئلة الشائعة</a>
-                <a href="#careers" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">التوظيف</a>
-                <a href="#contact" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">تواصل معنا</a>
+                <a href="{{ route('home') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الرئيسية</a>
+                <a href="{{ route('about') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">من نحن</a>
+
+                <!-- قائمة الخدمات (Accordion) -->
+                <div>
+                    <button onclick="toggleMobileDropdown('services-dropdown')" class="w-full flex justify-between items-center py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">
+                        <span>الخدمات</span>
+                        <i id="services-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="services-dropdown" class="hidden pr-4 space-y-2 pb-2">
+                        @foreach ($categories as $category)
+                        <a href="{{ route('services') }}" onclick="closeMobile()" class="flex items-center gap-3 p-2 rounded-xl hover:bg-cream transition-colors group">
+                            <div>
+                                <span class="text-sm font-bold text-warm-800 group-hover:text-terracotta transition-colors">{{ $category->name }}</span>
+                                <span class="block text-[11px] text-warm-400">{{ $category->description }}</span>
+                            </div>
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <a href="{{ route('portfolio') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">أعمالنا</a>
+                <a href="{{ route('articles.index') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">المقالات</a>
+
+                <!-- قائمة شركاء النجاح (Accordion) -->
+                <div>
+                    <button onclick="toggleMobileDropdown('brands-dropdown')" class="w-full flex justify-between items-center py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">
+                        <span>شركاء النجاح</span>
+                        <i id="brands-icon" class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div id="brands-dropdown" class="hidden pr-4 space-y-2 pb-2 max-h-60 overflow-y-auto">
+                        @foreach ($allBrands as $brand)
+                        <a href="{{ route('brand.show', $brand->slug) }}" onclick="closeMobile()" class="flex items-center gap-3 p-2 rounded-xl hover:bg-cream transition-colors group">
+
+                            @if($brand->image)
+                            <!-- ضبطنا حجم الصورة عشان تناسب الموبايل -->
+                            <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="w-10 h-10 rounded-lg object-contain bg-white p-1 border border-sand/50 flex-shrink-0">
+                            @else
+                            <div class="w-10 h-10 rounded-lg bg-cream flex items-center justify-center border border-sand/50 flex-shrink-0">
+                                <i class="fas fa-building text-warm-400 text-sm"></i>
+                            </div>
+                            @endif
+
+                            <div class="min-w-0">
+                                <span class="text-sm font-bold text-warm-800 group-hover:text-terracotta transition-colors">{{ $brand->name }}</span>
+                                <span class="block text-[11px] text-warm-400 line-clamp-1">{{ $brand->info }}</span>
+                            </div>
+
+                        </a>
+                        @endforeach
+                    </div>
+                </div>
+
+                <a href="{{ route('quote') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">عرض سعر</a>
+                <a href="{{ route('careers') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الوظايف</a>
+                <a href="{{ route('contact') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">تواصل معنا</a>
             </nav>
+
+            <div class="mt-10 pt-8 border-t border-sand">
+                <a href="{{ route('quote') }}" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
+            </div>
             <div class="mt-10 pt-8 border-t border-sand">
                 <a href="#quote" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
             </div>
@@ -506,7 +557,7 @@
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
             <div class="flex items-center justify-between h-20 md:h-24">
                 <!-- Logo -->
-                <a href="#" class="logo flex items-center gap-2">
+                <a href="{{ route('home') }}" class="logo flex items-center gap-2">
                     @if($setting->logo)
                     <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-20 w-auto">
                     @else
@@ -523,7 +574,7 @@
                         <div class="mega-panel absolute top-full right-0 pt-4" style="width:640px">
                             <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
                                 @foreach ($categories as $category)
-                                <a href="#services" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                <a href="{{ route('services') }}" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
                                     <div><span class="text-sm font-bold">{{ $category->name }}</span><span class="block text-[11px] text-warm-400">{{ $category->description }}</span></div>
                                 </a>
                                 @endforeach
@@ -558,11 +609,12 @@
                             </div>
                         </div>
                     </div>
+                    <a href="{{ route('quote') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">عرض سعر</a>
                     <a href="{{ route('careers') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الوظايف</a>
-                    <a href="#contact" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
+                    <a href="{{ route('contact') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
                 </div>
                 <div class="hidden lg:flex items-center gap-4">
-                    <a href="#quote" class="px-6 py-2.5 bg-terracotta text-ivory text-sm font-bold rounded-full hover:bg-warm-800 transition-all duration-300">اطلب عرض سعر</a>
+                    <a href="{{ route('quote') }}" class="px-6 py-2.5 bg-terracotta text-ivory text-sm font-bold rounded-full hover:bg-warm-800 transition-all duration-300">اطلب عرض سعر</a>
                 </div>
                 <!-- Mobile Toggle -->
                 <button id="menu-toggle-btn" onclick="openMobile()" class="lg:hidden w-10 h-10 flex items-center justify-center text-warm-700">
@@ -571,3 +623,27 @@
             </div>
         </div>
     </nav>
+
+    <script>
+        function toggleMobileDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const iconId = id.replace('-dropdown', '-icon');
+            const icon = document.getElementById(iconId);
+
+            if (!dropdown.classList.contains('hidden')) {
+                dropdown.classList.add('hidden');
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else {
+                document.querySelectorAll('#services-dropdown, #brands-dropdown').forEach(el => {
+                    el.classList.add('hidden');
+                });
+                document.querySelectorAll('#services-icon, #brands-icon').forEach(ic => {
+                    ic.style.transform = 'rotate(0deg)';
+                });
+
+                // ونفتح القائمة اللي اتداست
+                dropdown.classList.remove('hidden');
+                if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>

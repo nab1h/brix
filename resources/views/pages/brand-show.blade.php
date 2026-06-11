@@ -164,4 +164,7 @@
     });
     window.dispatchEvent(new Event('scroll'));
 </script>
+
+<!-- CTA -->
+@include('includes.cta')
 @endsection
