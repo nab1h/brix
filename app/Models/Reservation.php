@@ -16,6 +16,13 @@ class Reservation extends Model
         'email',
         'brand',
         'category',
+        'product_length',
+        'product_width',
+        'product_height',
+        'paper_weight',
+        'material',
+        'quantity',
+        'brand_logo',
         'notes',
         'is_archive',
         'is_delete',
@@ -23,5 +30,10 @@ class Reservation extends Model
 
     protected $casts = [
         'reservation_time' => 'datetime:H:i',
+        'product_length' => 'decimal:2',
+        'product_width' => 'decimal:2',
+        'product_height' => 'decimal:2',
+        'paper_weight' => 'integer',
+        'quantity' => 'integer',
     ];
 }

@@ -25,10 +25,10 @@
                     <!-- Filters -->
                     <form action="{{ route('admin.portfolios.index') }}" method="GET" class="flex gap-2 items-center">
                         <input type="text" name="search" value="{{ request('search') }}" placeholder="بحث بالاسم..."
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] w-40 text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] w-40 text-sm">
 
                         <select name="brand_id" onchange="this.form.submit()"
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] cursor-pointer text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] cursor-pointer text-sm">
                             <option value="">كل البراندات</option>
                             @foreach($brands as $brand)
                             <option value="{{ $brand->id }}" {{ request('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
@@ -36,7 +36,7 @@
                         </select>
 
                         <select name="cat_id" onchange="this.form.submit()"
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] cursor-pointer text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] cursor-pointer text-sm">
                             <option value="">كل الأقسام</option>
                             @foreach($categories as $category)
                             <option value="{{ $category->id }}" {{ request('cat_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
@@ -44,7 +44,7 @@
                         </select>
                     </form>
 
-                    <a href="{{ route('admin.portfolios.create') }}" class="bg-[#E60914] hover:bg-red-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                    <a href="{{ route('admin.portfolios.create') }}" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
                         <i class="fas fa-plus"></i> إضافة مشروع
                     </a>
                 </div>

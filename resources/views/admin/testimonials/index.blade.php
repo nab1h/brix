@@ -83,7 +83,7 @@
                                         <form action="{{ route('admin.testimonials.update-status', $item->id) }}" method="POST">
                                             @csrf
                                             @method('PUT')
-                                            <button type="submit" class="p-2 rounded-lg bg-gray-100 text-gray-500 hover:text-white hover:bg-[#E60914] transition" title="{{ $item->is_active ? 'إخفاء' : 'نشر' }}">
+                                            <button type="submit" class="p-2 rounded-lg bg-gray-100 text-gray-500 hover:text-white hover:bg-[#6F8F7A] transition" title="{{ $item->is_active ? 'إخفاء' : 'نشر' }}">
                                                 <i class="fa-solid {{ $item->is_active ? 'fa-eye-slash' : 'fa-eye' }}"></i>
                                             </button>
                                         </form>

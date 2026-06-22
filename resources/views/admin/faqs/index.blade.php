@@ -21,7 +21,7 @@
                 </div>
 
                 <a href="{{ route('admin.faqs.create') }}">
-                    <button class="px-5 py-2.5 bg-[#E60914] hover:bg-[#C50812] text-white rounded-lg transition flex items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E60914] focus:ring-offset-2 focus:ring-offset-white">
+                    <button class="px-5 py-2.5 bg-[#6F8F7A] hover:bg-[#587061] text-white rounded-lg transition flex items-center gap-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6F8F7A] focus:ring-offset-2 focus:ring-offset-white">
                         <i class="fas fa-plus"></i> إضافة سؤال
                     </button>
                 </a>

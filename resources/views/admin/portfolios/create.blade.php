@@ -26,13 +26,13 @@
                         <!-- Name -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">اسم المشروع <span class="text-red-500">*</span></label>
-                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" required>
                         </div>
 
                         <!-- Brand -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">البراند <span class="text-red-500">*</span></label>
-                            <select name="brand_id" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm bg-white" required>
+                            <select name="brand_id" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm bg-white" required>
                                 <option value="">اختر البراند...</option>
                                 @foreach($brands as $brand)
                                 <option value="{{ $brand->id }}" {{ old('brand_id') == $brand->id ? 'selected' : '' }}>{{ $brand->name }}</option>
@@ -43,7 +43,7 @@
                         <!-- Category -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">القسم <span class="text-red-500">*</span></label>
-                            <select name="cat_id" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm bg-white" required>
+                            <select name="cat_id" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm bg-white" required>
                                 <option value="">اختر القسم...</option>
                                 @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ old('cat_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
@@ -54,7 +54,7 @@
                         <!-- Status -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الحالة <span class="text-red-500">*</span></label>
-                            <select name="status" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm bg-white" required>
+                            <select name="status" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm bg-white" required>
                                 <option value="1" {{ old('status', 1) == 1 ? 'selected' : '' }}>مفعل</option>
                                 <option value="0" {{ old('status') == 0 ? 'selected' : '' }}>معطل</option>
                             </select>
@@ -63,24 +63,24 @@
                         <!-- Image -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-gray-700 mb-1">صورة المشروع</label>
-                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-[#E60914] hover:file:bg-red-100">
+                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-[#6F8F7A] hover:file:bg-red-100">
                         </div>
 
                         <!-- URL -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-gray-700 mb-1">رابط المشروع (URL)</label>
-                            <input type="url" name="url" value="{{ old('url') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="https://example.com">
+                            <input type="url" name="url" value="{{ old('url') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="https://example.com">
                         </div>
 
                         <!-- Description -->
                         <div class="md:col-span-2">
                             <label class="block text-sm font-medium text-gray-700 mb-1">الوصف</label>
-                            <textarea name="description" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm">{{ old('description') }}</textarea>
+                            <textarea name="description" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm">{{ old('description') }}</textarea>
                         </div>
                     </div>
 
                     <div class="mt-6 flex items-center gap-4">
-                        <button type="submit" class="bg-[#E60914] hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
                             حفظ المشروع
                         </button>
                         <a href="{{ route('admin.portfolios.index') }}" class="text-gray-500 hover:text-gray-700 text-sm font-medium transition">إلغاء</a>

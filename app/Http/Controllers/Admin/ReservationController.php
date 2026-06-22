@@ -7,6 +7,7 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Mail\ReservationMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class ReservationController extends Controller
 {
@@ -84,8 +85,19 @@ class ReservationController extends Controller
             'email'    => 'nullable|email|max:255',
             'brand'    => 'nullable|string|max:255',
             'category' => 'nullable|string|max:255',
+            'product_length' => 'required|numeric|min:0.1|max:99999',
+            'product_width'  => 'required|numeric|min:0.1|max:99999',
+            'product_height' => 'required|numeric|min:0.1|max:99999',
+            'paper_weight'   => 'required|integer|in:300,320,350,400',
+            'material'       => 'required|string|in:بريستول,كوشيه,فنلندي الشجرة',
+            'quantity'       => 'required|integer|min:1000|max:100000000',
+            'brand_logo'     => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'notes'    => 'nullable|string',
         ]);
+
+        if ($request->hasFile('brand_logo')) {
+            $validated['brand_logo'] = $request->file('brand_logo')->store('reservation-logos', 'public');
+        }
 
         $validated['status'] = 'pending';
         $validated['is_archive'] = 0;
@@ -126,9 +138,23 @@ class ReservationController extends Controller
             'email'             => 'nullable|email|max:255',      // <-- تم الإضافة
             'brand'             => 'nullable|string|max:255',     // <-- تم الإضافة
             'category'          => 'nullable|string|max:255',     // <-- تم الإضافة
+            'product_length'    => 'nullable|numeric|min:0.1|max:99999',
+            'product_width'     => 'nullable|numeric|min:0.1|max:99999',
+            'product_height'    => 'nullable|numeric|min:0.1|max:99999',
+            'paper_weight'      => 'nullable|integer|in:300,320,350,400',
+            'material'          => 'nullable|string|in:بريستول,كوشيه,فنلندي الشجرة',
+            'quantity'          => 'nullable|integer|min:1000|max:100000000',
+            'brand_logo'        => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'status'            => 'required|in:pending,confirmed,cancelled,completed',
             'notes'             => 'nullable|string',
         ]);
+
+        if ($request->hasFile('brand_logo')) {
+            if ($reservation->brand_logo) {
+                Storage::disk('public')->delete($reservation->brand_logo);
+            }
+            $validated['brand_logo'] = $request->file('brand_logo')->store('reservation-logos', 'public');
+        }
 
         $reservation->update($validated);
 
@@ -149,6 +175,9 @@ class ReservationController extends Controller
     public function destroy($id)
     {
         $reservation = Reservation::findOrFail($id);
+        if ($reservation->brand_logo) {
+            Storage::disk('public')->delete($reservation->brand_logo);
+        }
         $reservation->delete();
         return redirect()
             ->back()

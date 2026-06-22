@@ -114,5 +114,14 @@ class HomeController extends Controller
         return view('pages.services');
     }
 
+    public function showServices(Category $category)
+    {
+        $category->load(['portfolios' => function ($query) {
+            $query->with('brand')->latest();
+        }]);
+
+        return view('pages.service-show', compact('category'));
+    }
+
 
 }

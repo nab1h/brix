@@ -1,7 +1,7 @@
-<section id="contact" class="contact-bg relative py-24 md:py-40 overflow-hidden">
+<section id="contact" class="contact-bg relative py-20 md:py-28 overflow-hidden bg-white">
 
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div class="text-center mb-20">
+        <div class="text-center mb-14">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">تواصل معنا</span>
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">نحب أن <span class="text-terracotta">نسمع</span> منك</h2>
         </div>
@@ -73,7 +73,7 @@
             <div class="lg:col-span-3 relative">
                 <form action="{{ route('frontend.contact.store') }}"
                     method="POST"
-                    class="contact-bg-form relative reveal border border-sand rounded-2xl p-8 md:p-10 space-y-5 overflow-hidden">
+                    class="contact-bg-form relative reveal border border-sand rounded-2xl p-7 md:p-9 space-y-5 overflow-hidden">
                     @csrf
                     {{-- رسالة النجاح --}}
                     @if (session('status'))
@@ -145,7 +145,7 @@
                     </div>
 
                     <button type="submit"
-                        class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2">
+                        class="w-full py-4 bg-terracotta text-ivory font-semibold rounded-xl hover:bg-olive-800 transition-all duration-300 flex items-center justify-center gap-2">
                         <i class="fas fa-paper-plane text-sm"></i>
                         إرسال الرسالة
                     </button>

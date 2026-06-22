@@ -14,7 +14,7 @@
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">عنوان المقال <span class="text-red-500">*</span></label>
-                            <input type="text" name="title" value="{{ old('title', $article->title) }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" required>
+                            <input type="text" name="title" value="{{ old('title', $article->title) }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" required>
                         </div>
 
                         <div>
@@ -22,7 +22,7 @@
                             @if($article->image)
                             <img src="{{ Storage::url($article->image) }}" class="w-20 h-20 rounded-lg object-cover mb-2">
                             @endif
-                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:bg-red-50 file:text-[#E60914]">
+                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:bg-gray-100 file:text-[#6F8F7A]">
                         </div>
 
                         <div>
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="mt-6 flex items-center gap-4">
-                        <button type="submit" class="bg-[#E60914] hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">تحديث المقال</button>
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">تحديث المقال</button>
                         <a href="{{ route('admin.articles.index') }}" class="text-gray-500 hover:text-gray-700 text-sm font-medium transition">إلغاء</a>
                     </div>
                 </form>

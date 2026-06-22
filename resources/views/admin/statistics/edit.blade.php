@@ -30,7 +30,7 @@
                         <label class="block text-gray-700 text-sm font-medium mb-2">الرقم (مثال: 500+)</label>
                         <!-- ملاحظة: القيمة الافتراضية تأتي من قاعدة البيانات ($stat->number) -->
                         <input type="text" name="number" value="{{ old('number', $stat->number) }}"
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition"
+                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition"
                             placeholder="أدخل الرقم أو القيمة" required autofocus>
                         @error('number') <span class="text-red-600 text-xs mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -39,7 +39,7 @@
                     <div class="mb-6">
                         <label class="block text-gray-700 text-sm font-medium mb-2">العنوان</label>
                         <input type="text" name="title_ar" value="{{ old('title_ar', $stat->title_ar) }}"
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition"
+                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition"
                             dir="rtl" placeholder="مثال: سنة خبرة" required>
                         @error('title_ar') <span class="text-red-600 text-xs mt-1 block">{{ $message }}</span> @enderror
                     </div>
@@ -48,7 +48,7 @@
                     <div class="mb-8">
                         <label class="block text-gray-700 text-sm font-medium mb-2">الترتيب (للعرض)</label>
                         <input type="number" name="sort_order" value="{{ old('sort_order', $stat->sort_order) }}"
-                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                     </div>
 
                     <!-- أزرار التحكم -->
@@ -56,7 +56,7 @@
                         <a href="{{ route('admin.statistics.index') }}" class="text-gray-600 hover:text-gray-900 px-4 py-2 transition font-medium">
                             إلغاء
                         </a>
-                        <button type="submit" class="bg-[#E60914] hover:bg-[#C50812] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E60914] focus:ring-offset-2 focus:ring-offset-white">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6F8F7A] focus:ring-offset-2 focus:ring-offset-white">
                             حفظ التعديلات
                         </button>
                     </div>

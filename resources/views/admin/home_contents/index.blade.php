@@ -17,10 +17,10 @@
             <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
 
                 <div class="flex border-b border-gray-200 bg-gray-50/50">
-                    <button type="button" onclick="openTab(event, 'hero')" id="btn-hero" class="px-6 py-4 text-sm font-medium text-gray-900 border-b-2 border-[#E60914] focus:outline-none">
+                    <button type="button" onclick="openTab(event, 'hero')" id="btn-hero" class="px-6 py-4 text-sm font-medium text-gray-900 border-b-2 border-[#6F8F7A] focus:outline-none">
                         القسم العلوي (Hero Section)
                     </button>
-                    <button type="button" onclick="openTab(event, 'about')" id="btn-about" class="px-6 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-[#E60914] focus:outline-none">
+                    <button type="button" onclick="openTab(event, 'about')" id="btn-about" class="px-6 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-[#6F8F7A] focus:outline-none">
                         من نحن (About Section)
                     </button>
                 </div>
@@ -37,14 +37,14 @@
                             <div>
                                 <label class="block text-gray-700 text-sm mb-2">العنوان الرئيسي</label>
                                 <input type="text" name="hero_title_ar" value="{{ old('hero_title_ar', $content->hero_title_ar) }}"
-                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914]" dir="rtl">
+                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A]" dir="rtl">
                             </div>
 
 
                             <div>
                                 <label class="block text-gray-700 text-sm mb-2">العنوان الفرعي / الوصف المختصر</label>
                                 <input type="text" name="hero_subtitle_ar" value="{{ old('hero_subtitle_ar', $content->hero_subtitle_ar) }}"
-                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914]" dir="rtl">
+                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A]" dir="rtl">
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                                 <div>
                                     <label class="block text-gray-700 text-sm mb-2">عنوان القسم</label>
                                     <input type="text" name="about_title_ar" value="{{ old('about_title_ar', $content->about_title_ar) }}"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914]" dir="rtl">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A]" dir="rtl">
                                 </div>
                             </div>
 
@@ -68,14 +68,14 @@
                             <div>
                                 <label class="block text-gray-700 text-sm mb-2">وصف القصة</label>
                                 <textarea name="about_desc_ar" rows="5"
-                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914]" dir="rtl">{{ old('about_desc_ar', $content->about_desc_ar) }}</textarea>
+                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A]" dir="rtl">{{ old('about_desc_ar', $content->about_desc_ar) }}</textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- زر الحفظ -->
                     <div class="mt-8 pt-6 border-t border-gray-200 flex justify-end">
-                        <button type="submit" class="bg-[#E60914] hover:bg-[#C50812] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E60914] focus:ring-offset-2 focus:ring-offset-white">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6F8F7A] focus:ring-offset-2 focus:ring-offset-white">
                             حفظ المحتوى
                         </button>
                     </div>
@@ -99,7 +99,7 @@
             tablinks = document.querySelectorAll("button[onclick^='openTab']");
             tablinks.forEach(function(btn) {
                 // إزالة تنسيق الزر النشط (الوضع الفاتح)
-                btn.classList.remove("border-[#E60914]", "text-gray-900");
+                btn.classList.remove("border-[#6F8F7A]", "text-gray-900");
                 // إضافة تنسيق الزر غير النشط
                 btn.classList.add("border-transparent", "text-gray-500");
             });
@@ -110,7 +110,7 @@
 
             // إضافة تنسيق الزر النشط للتبويب المختار (الوضع الفاتح)
             evt.currentTarget.classList.remove("border-transparent", "text-gray-500");
-            evt.currentTarget.classList.add("border-[#E60914]", "text-gray-900");
+            evt.currentTarget.classList.add("border-[#6F8F7A]", "text-gray-900");
         }
 
         document.getElementById("btn-hero").click();

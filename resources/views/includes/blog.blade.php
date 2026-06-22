@@ -1,4 +1,4 @@
-<section class="py-20 md:py-28 bg-warm-50/30">
+<section class="py-20 md:py-28 bg-white">
     <!-- تم توحيد الـ Container ليلف العنوان والمحتوى -->
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
 
@@ -22,13 +22,13 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($articles as $article)
 
-            <a href="{{ route('articles.show', $article) }}" class="reveal group block bg-white border border-sand/50 rounded-2xl overflow-hidden shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-terracotta/20">
+            <a href="{{ route('articles.show', $article) }}" class="reveal group block bg-white border border-sand rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-olive-400/60">
 
                 <!-- Image Container -->
                 <div class="relative aspect-video overflow-hidden">
-                    <img src="{{ $article->image ? Storage::url($article->image) : 'https://picsum.photos/seed/article-default/800/450.jpg' }}"
+                    <img src="{{ $article->image ? Storage::url($article->image) : asset('images-layout/default-article.png') }}"
                         alt="{{ $article->title }}"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500">
 
                     <!-- Overlay على الصورة عند التمرير -->
                     <div class="absolute inset-0 bg-gradient-to-t from-warm-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

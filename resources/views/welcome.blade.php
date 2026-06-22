@@ -5,12 +5,12 @@
 
 
 <!-- HERO -->
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+<section id="hero" class="relative min-h-[720px] flex items-center overflow-hidden bg-cream">
     <div class="absolute inset-0">
         @php
-        $image = $heroImage?->path
-        ? asset('storage/' . $heroImage->path)
-        : 'https://picsum.photos/seed/brix-nature-hero/1600/1000.jpg';
+$image = $heroImage?->path
+    ? asset('storage/' . $heroImage->path)
+    : asset('images-layout/default-hero.png');
         @endphp
 
         <img src="{{ $image }}" class="w-full h-full object-cover" alt="Executive Chef">
@@ -30,9 +30,6 @@
                     اطلب عرض سعر
                     <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:-translate-x-1 transition-transform"><i class="fas fa-arrow-left text-xs"></i></span>
                 </a>
-                <a href="#about" class="inline-flex items-center gap-2 px-8 py-4 border-2 border-warm-300 text-warm-700 font-bold rounded-full hover:border-terracotta hover:text-terracotta transition-all duration-400">
-                    اكتشف المزيد
-                </a>
             </div>
         </div>
     </div>
@@ -44,36 +41,10 @@
     </div>
 </section>
 
-
-<!-- MARQUEE -->
-<div class="py-6 border-y border-sand overflow-hidden bg-cream/50">
-    <div class="marquee-track flex items-center gap-12 whitespace-nowrap" style="width:max-content">
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الطباعة الديجيتال</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الهوية البصرية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">اللوحات الإعلانية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">السوشيال ميديا</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">التغليف والعبوات</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الهدايا الدعائية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الحملات التسويقية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الطباعة الديجيتال</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الهوية البصرية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">اللوحات الإعلانية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">السوشيال ميديا</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">التغليف والعبوات</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الهدايا الدعائية</span><span class="text-terracotta text-xs">✦</span>
-        <span class="text-warm-300 text-sm font-semibold tracking-wider">الحملات التسويقية</span><span class="text-terracotta text-xs">✦</span>
-    </div>
-</div>
-
-
-<!-- ABOUT -->
-@include(' includes.about')
-
-
 <!-- VALUES -->
-<section class="value-bg py-24 md:py-32 bg-cream/60">
+<section class="value-bg py-20 md:py-28 bg-cream/60">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div class="text-center mb-20">
+        <div class="text-center mb-14">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">قيمنا</span>
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">ما يتمسك به <span class="text-terracotta">فريقنا</span></h2>
         </div>
@@ -99,137 +70,136 @@
 <!-- SERVICES -->
 @include('includes.services')
 <!-- PROCESS -->
-<section class="py-24 md:py-32 relative overflow-hidden min-h-[600px]">
+<section class="py-20 md:py-28 relative overflow-hidden">
     <!-- Gradient Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-[#1946AF] via-[#8B2A50] to-[#FA6B31]"></div>
+    <div class="absolute inset-0 bg-[#E7F0EA]"></div>
 
     <!-- Organic Flowing Curves (SVG) -->
-    <div class="absolute inset-0 overflow-hidden">
+    <div class="hidden">
         <svg class="absolute top-0 right-0 w-full h-full opacity-10" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1440 0C1200 100 900 50 700 200C500 350 300 200 0 300V900H1440V0Z" fill="url(#curve1)" />
             <path d="M1440 150C1100 250 800 100 600 300C400 500 200 350 0 450V900H1440V150Z" fill="url(#curve2)" />
             <path d="M1440 400C1000 500 700 350 500 500C300 650 100 550 0 600V900H1440V400Z" fill="url(#curve3)" />
             <defs>
                 <linearGradient id="curve1" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#FA6B31" />
-                    <stop offset="50%" stop-color="#8B2A50" />
-                    <stop offset="100%" stop-color="#1946AF" />
+                    <stop offset="0%" stop-color="#6F8F7A" />
+                    <stop offset="50%" stop-color="#66706C" />
+                    <stop offset="100%" stop-color="#587061" />
                 </linearGradient>
                 <linearGradient id="curve2" x1="1440" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#1946AF" />
-                    <stop offset="50%" stop-color="#C4572A" />
-                    <stop offset="100%" stop-color="#FA6B31" />
+                    <stop offset="0%" stop-color="#6F8F7A" />
+                    <stop offset="50%" stop-color="#66706C" />
+                    <stop offset="100%" stop-color="#587061" />
                 </linearGradient>
                 <linearGradient id="curve3" x1="0" y1="900" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#FA6B31" stop-opacity="0.6" />
-                    <stop offset="100%" stop-color="#1946AF" stop-opacity="0.3" />
+                    <stop offset="0%" stop-color="#66706C" stop-opacity="0.6" />
+                    <stop offset="100%" stop-color="#6F8F7A" stop-opacity="0.3" />
                 </linearGradient>
             </defs>
         </svg>
     </div>
 
     <!-- Floating Circles -->
-    <div class="absolute top-20 right-20 w-72 h-72 bg-[#FA6B31]/15 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 left-20 w-96 h-96 bg-[#1946AF]/15 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#8B2A50]/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-20 right-20 w-72 h-72 bg-white/60 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-20 w-96 h-96 bg-white/60 rounded-full blur-3xl"></div>
 
     <!-- Grid Overlay -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle, #6F8F7A 1px, transparent 1px); background-size: 30px 30px;"></div>
 
     <!-- Content -->
     <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <div class="text-center mb-20">
-            <span class="reveal text-orange-200 text-sm font-bold tracking-[0.15em]">مراحل العمل</span>
-            <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-white mt-4">شفافية في كل <span class="text-orange-300">خطوة</span></h2>
-            <p class="reveal reveal-delay-2 text-blue-100/70 text-lg mt-4 max-w-xl mx-auto">نعمل بعملية واضحة ومحددة حتى تعرف بالضبط أين وصل مشروعك</p>
+        <div class="text-center mb-14">
+            <span class="reveal text-warm-500 text-sm font-medium tracking-[0.12em]">مراحل العمل</span>
+            <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-semibold text-warm-900 mt-4">شفافية في كل <span class="text-terracotta">خطوة</span></h2>
+            <p class="reveal reveal-delay-2 text-warm-500 text-lg mt-4 max-w-xl mx-auto">نعمل بعملية واضحة ومحددة حتى تعرف بالضبط أين وصل مشروعك</p>
         </div>
 
         <div class="relative">
             <!-- Connection Line -->
             <div class="hidden md:block absolute top-[52px] right-[10%] left-[10%] h-[2px]">
-                <div class="w-full h-full bg-gradient-to-l from-[#FA6B31] via-[#C4572A] to-[#1946AF] opacity-30 rounded-full"></div>
-                <div class="absolute top-0 right-0 h-full w-0 bg-gradient-to-l from-[#FA6B31] via-[#C4572A] to-[#1946AF] rounded-full animate-[lineGrow_3s_ease-out_forwards]"></div>
+                <div class="w-full h-full bg-[#CBDACF] rounded-full"></div>
+                <div class="absolute top-0 right-0 h-full w-0 bg-[#91A997] rounded-full animate-[lineGrow_3s_ease-out_forwards]"></div>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-6">
                 <!-- Step 1 -->
                 <div class="reveal text-center">
                     <div class="relative mx-auto mb-6 w-[104px]">
-                        <div class="w-[104px] h-[104px] rounded-full bg-gradient-to-br from-[#FA6B31] to-[#FA6B31]/60 flex items-center justify-center shadow-lg shadow-[#FA6B31]/30">
-                            <div class="w-[88px] h-[88px] rounded-full bg-gradient-to-br from-[#FA6B31] to-[#E85A20] flex items-center justify-center">
-                                <span class="font-serif text-3xl font-bold text-white">١</span>
+                        <div class="w-[104px] h-[104px] rounded-full border border-[#CAD9CF] bg-white/60 flex items-center justify-center">
+                            <div class="w-[88px] h-[88px] rounded-full bg-[#D5E4DA] flex items-center justify-center">
+                                <span class="font-serif text-3xl font-bold text-warm-900">١</span>
                             </div>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                            <i class="fas fa-ear-listen text-[#FA6B31] text-[10px]"></i>
+                            <i class="fas fa-ear-listen text-[#6F8F7A] text-[10px]"></i>
                         </div>
                     </div>
-                    <h4 class="font-serif text-lg font-bold mb-2 text-white">استماع</h4>
-                    <p class="text-sm text-blue-100/60 leading-relaxed">نفهم احتياجك بدقة ونسأل الأسئلة الصحيحة</p>
+                    <h4 class="font-serif text-lg font-bold mb-2 text-warm-900">استماع</h4>
+                    <p class="text-sm text-warm-500 leading-relaxed">نفهم احتياجك بدقة ونسأل الأسئلة الصحيحة</p>
                 </div>
 
                 <!-- Step 2 -->
                 <div class="reveal reveal-delay-1 text-center">
                     <div class="relative mx-auto mb-6 w-[104px]">
-                        <div class="w-[104px] h-[104px] rounded-full bg-gradient-to-br from-[#C4572A] to-[#C4572A]/60 flex items-center justify-center shadow-lg shadow-[#C4572A]/30">
-                            <div class="w-[88px] h-[88px] rounded-full bg-gradient-to-br from-[#C4572A] to-[#8B2A50] flex items-center justify-center">
-                                <span class="font-serif text-3xl font-bold text-white">٢</span>
+                        <div class="w-[104px] h-[104px] rounded-full border border-[#CAD9CF] bg-white/60 flex items-center justify-center">
+                            <div class="w-[88px] h-[88px] rounded-full bg-[#D5E4DA] flex items-center justify-center">
+                                <span class="font-serif text-3xl font-bold text-warm-900">٢</span>
                             </div>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                            <i class="fas fa-pencil-ruler text-[#C4572A] text-[10px]"></i>
+                            <i class="fas fa-pencil-ruler text-[#6F8F7A] text-[10px]"></i>
                         </div>
                     </div>
-                    <h4 class="font-serif text-lg font-bold mb-2 text-white">تصميم</h4>
-                    <p class="text-sm text-blue-100/60 leading-relaxed">نبتكر حلولاً بصرية تعبر عن رؤيتك بصدق</p>
+                    <h4 class="font-serif text-lg font-bold mb-2 text-warm-900">تصميم</h4>
+                    <p class="text-sm text-warm-500 leading-relaxed">نبتكر حلولاً بصرية تعبر عن رؤيتك بصدق</p>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="reveal reveal-delay-2 text-center">
                     <div class="relative mx-auto mb-6 w-[104px]">
-                        <div class="w-[104px] h-[104px] rounded-full bg-gradient-to-br from-[#8B2A50] to-[#8B2A50]/60 flex items-center justify-center shadow-lg shadow-[#8B2A50]/30">
-                            <div class="w-[88px] h-[88px] rounded-full bg-gradient-to-br from-[#8B2A50] to-[#5C1A3A] flex items-center justify-center">
-                                <span class="font-serif text-3xl font-bold text-white">٣</span>
+                        <div class="w-[104px] h-[104px] rounded-full border border-[#CAD9CF] bg-white/60 flex items-center justify-center">
+                            <div class="w-[88px] h-[88px] rounded-full bg-[#D5E4DA] flex items-center justify-center">
+                                <span class="font-serif text-3xl font-bold text-warm-900">٣</span>
                             </div>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                            <i class="fas fa-check-double text-[#8B2A50] text-[10px]"></i>
+                            <i class="fas fa-check-double text-[#6F8F7A] text-[10px]"></i>
                         </div>
                     </div>
-                    <h4 class="font-serif text-lg font-bold mb-2 text-white">مراجعة</h4>
-                    <p class="text-sm text-blue-100/60 leading-relaxed">نراجع معك ونعدل حتى الرضا التام</p>
+                    <h4 class="font-serif text-lg font-bold mb-2 text-warm-900">مراجعة</h4>
+                    <p class="text-sm text-warm-500 leading-relaxed">نراجع معك ونعدل حتى الرضا التام</p>
                 </div>
 
                 <!-- Step 4 -->
                 <div class="reveal reveal-delay-3 text-center">
                     <div class="relative mx-auto mb-6 w-[104px]">
-                        <div class="w-[104px] h-[104px] rounded-full bg-gradient-to-br from-[#3D3A8B] to-[#3D3A8B]/60 flex items-center justify-center shadow-lg shadow-[#3D3A8B]/30">
-                            <div class="w-[88px] h-[88px] rounded-full bg-gradient-to-br from-[#3D3A8B] to-[#1946AF] flex items-center justify-center">
-                                <span class="font-serif text-3xl font-bold text-white">٤</span>
+                        <div class="w-[104px] h-[104px] rounded-full border border-[#CAD9CF] bg-white/60 flex items-center justify-center">
+                            <div class="w-[88px] h-[88px] rounded-full bg-[#D5E4DA] flex items-center justify-center">
+                                <span class="font-serif text-3xl font-bold text-warm-900">٤</span>
                             </div>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                            <i class="fas fa-industry text-[#1946AF] text-[10px]"></i>
+                            <i class="fas fa-industry text-[#6F8F7A] text-[10px]"></i>
                         </div>
                     </div>
-                    <h4 class="font-serif text-lg font-bold mb-2 text-white">إنتاج</h4>
-                    <p class="text-sm text-blue-100/60 leading-relaxed">تنفيذ بأعلى معايير الجودة والتقنية</p>
+                    <h4 class="font-serif text-lg font-bold mb-2 text-warm-900">إنتاج</h4>
+                    <p class="text-sm text-warm-500 leading-relaxed">تنفيذ بأعلى معايير الجودة والتقنية</p>
                 </div>
 
                 <!-- Step 5 -->
                 <div class="reveal reveal-delay-4 text-center col-span-2 md:col-span-1">
                     <div class="relative mx-auto mb-6 w-[104px]">
-                        <div class="w-[104px] h-[104px] rounded-full bg-gradient-to-br from-[#1946AF] to-[#1946AF]/60 flex items-center justify-center shadow-lg shadow-[#1946AF]/30">
-                            <div class="w-[88px] h-[88px] rounded-full bg-gradient-to-br from-[#1946AF] to-[#0F2E79] flex items-center justify-center">
-                                <span class="font-serif text-3xl font-bold text-white">٥</span>
+                        <div class="w-[104px] h-[104px] rounded-full border border-[#CAD9CF] bg-white/60 flex items-center justify-center">
+                            <div class="w-[88px] h-[88px] rounded-full bg-[#D5E4DA] flex items-center justify-center">
+                                <span class="font-serif text-3xl font-bold text-warm-900">٥</span>
                             </div>
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md flex items-center justify-center">
-                            <i class="fas fa-truck-fast text-[#1946AF] text-[10px]"></i>
+                            <i class="fas fa-truck-fast text-[#6F8F7A] text-[10px]"></i>
                         </div>
                     </div>
-                    <h4 class="font-serif text-lg font-bold mb-2 text-white">تسليم</h4>
-                    <p class="text-sm text-blue-100/60 leading-relaxed">نسلمك المشروع ونتابع النتائج معك</p>
+                    <h4 class="font-serif text-lg font-bold mb-2 text-warm-900">تسليم</h4>
+                    <p class="text-sm text-warm-500 leading-relaxed">نسلمك المشروع ونتابع النتائج معك</p>
                 </div>
             </div>
         </div>
@@ -237,15 +207,13 @@
 </section>
 
 
-<!-- PORTFOLIO -->
-@include('includes.portfolio')
 
 <!-- TESTIMONIALS -->
-<section class="py-24 md:py-32 relative overflow-hidden" id="testimonials">
+<section class="py-20 md:py-28 relative overflow-hidden" id="testimonials">
     <!-- Background Image Layer -->
     <div class="absolute inset-0 bg-ivory">
         <!-- الطبقة ١: تدرج لوني بألوان البراند الأساسية (البرتقالي والأزرق) -->
-        <div class="absolute inset-0 bg-gradient-to-tr from-[#1946AF]/15 via-transparent to-[#FA6B31]/15"></div>
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#6F8F7A]/10 via-transparent to-[#66706C]/10"></div>
 
         <!-- الطبقة ٢: صورة طابع الطباعة والأحبار (محولة للرمادي ومزوجة كحبر) -->
         <img src="testimonial.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-[0.08] mix-blend-multiply grayscale">
@@ -255,7 +223,7 @@
     </div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-        <div class="text-center mb-20">
+        <div class="text-center mb-14">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">أصوات عملائنا</span>
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">قصص <span class="text-terracotta">حقيقية</span></h2>
         </div>
@@ -438,11 +406,11 @@
     </div>
 </section>
 
-<!-- CAREERS -->
-@include('includes.careers')
-<!-- CONTACT -->
-@include('includes.contact')
+
 <!-- QUOTE -->
 @include('includes.quote')
+
+<!-- CONTACT -->
+@include('includes.contact')
 
 @include('includes.footer')

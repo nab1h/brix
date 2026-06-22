@@ -15,7 +15,7 @@
 
                     <!-- Header -->
                     <tr>
-                        <td style="background-color: #E60914; padding: 20px; text-align: center;">
+                        <td style="background-color: #6F8F7A; padding: 20px; text-align: center;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 22px;">رسالة تواصل جديدة</h1>
                         </td>
                     </tr>
@@ -44,7 +44,7 @@
                                 </tr>
                             </table>
 
-                            <div style="background-color: #fdf2f8; border-right: 4px solid #E60914; padding: 15px; border-radius: 8px;">
+                            <div style="background-color: #F4F6F5; border-right: 4px solid #6F8F7A; padding: 15px; border-radius: 8px;">
                                 <p style="margin: 0 0 5px; color: #6b7280; font-size: 12px;">نص الرسالة:</p>
                                 <p style="margin: 0; color: #374151; font-size: 15px; line-height: 1.6;">{{ $contact->msg }}</p>
                             </div>
@@ -53,7 +53,7 @@
                             <table width="100%" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td align="center" style="padding-top: 30px;">
-                                        <a href="{{ route('admin.contacts.index') }}" target="_blank" style="display: inline-block; background-color: #E60914; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; font-weight: bold;">
+                                        <a href="{{ route('admin.contacts.index') }}" target="_blank" style="display: inline-block; background-color: #6F8F7A; color: #ffffff; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-size: 16px; font-weight: bold;">
                                             الذهاب إلى لوحة التحكم
                                         </a>
                                     </td>

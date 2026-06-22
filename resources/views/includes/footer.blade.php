@@ -33,7 +33,6 @@
              <div>
                  <h4 class="font-serif text-lg font-bold text-ivory mb-6">روابط سريعة</h4>
                  <ul class="space-y-3">
-                     <li><a href="{{ route('about') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">من نحن</a></li>
                      <li><a href="{{ route('services') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الخدمات</a></li>
                      <li><a href="{{ route('portfolio') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">أعمالنا</a></li>
                      <li><a href="{{ route('articles.index') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">المدونة</a></li>
@@ -52,7 +51,7 @@
                  <h4 class="font-serif text-lg font-bold text-ivory mb-6">خدماتنا</h4>
                  <ul class="space-y-3">
                      @foreach ($categories as $category)
-                     <li><a href="{{ route('services') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $category->name }}</a></li>
+                     <li><a href="{{ route('services.show', $category) }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $category->name }}</a></li>
                      @endforeach
 
                  </ul>
@@ -182,12 +181,12 @@
      window.addEventListener('scroll', function() {
          const y = window.scrollY;
          if (y > 80) {
-             navbar.style.background = 'rgba(250,247,242,0.95)';
+             navbar.style.background = 'rgba(255,255,255,0.96)';
              navbar.style.backdropFilter = 'blur(16px)';
              navbar.style.boxShadow = '0 1px 0 rgba(0,0,0,0.05)';
          } else {
-             navbar.style.background = 'transparent';
-             navbar.style.backdropFilter = 'none';
+             navbar.style.background = 'rgba(255,255,255,0.92)';
+             navbar.style.backdropFilter = 'blur(18px)';
              navbar.style.boxShadow = 'none';
          }
          // Back to top

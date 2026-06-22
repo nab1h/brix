@@ -18,7 +18,7 @@
 
                 <!-- زر إضافة جديد -->
                 <div class="flex justify-end mb-6">
-                    <a href="{{ route('admin.statistics.create') }}" class="inline-flex items-center bg-[#E60914] hover:bg-[#C50812] text-white px-6 py-2.5 rounded-lg text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#E60914] focus:ring-offset-2 focus:ring-offset-white">
+                    <a href="{{ route('admin.statistics.create') }}" class="inline-flex items-center bg-[#6F8F7A] hover:bg-[#587061] text-white px-6 py-2.5 rounded-lg text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#6F8F7A] focus:ring-offset-2 focus:ring-offset-white">
                         <i class="fas fa-plus ml-2"></i> إضافة إحصائية
                     </a>
                 </div>

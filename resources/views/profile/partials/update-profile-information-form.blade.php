@@ -19,13 +19,13 @@
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full bg-white border border-gray-300 text-gray-900 focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] rounded-lg transition" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full bg-white border border-gray-300 text-gray-900 focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] rounded-lg transition" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full bg-white border border-gray-300 text-gray-900 focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] rounded-lg transition" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full bg-white border border-gray-300 text-gray-900 focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] rounded-lg transition" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
@@ -33,7 +33,7 @@
                 <p class="text-sm text-gray-600">
                     {{ __('Your email address is unverified.') }}
 
-                    <button form="send-verification" class="underline text-sm text-[#E60914] hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#E60914] focus:ring-offset-white rounded-md">
+                    <button form="send-verification" class="underline text-sm text-[#6F8F7A] hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6F8F7A] focus:ring-offset-white rounded-md">
                         {{ __('Click here to re-send the verification email.') }}
                     </button>
                 </p>

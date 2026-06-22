@@ -9,10 +9,10 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($articles as $article)
 
-            <a href="{{ route('articles.show', $article) }}" class="reveal group block bg-white border border-sand/50 rounded-2xl overflow-hidden shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2">
+            <a href="{{ route('articles.show', $article) }}" class="reveal group block bg-white border border-sand rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-olive-400/60">
 
                 <div class="aspect-video overflow-hidden">
-                    <img src="{{ $article->image ? Storage::url($article->image) : 'https://picsum.photos/seed/article-default/800/450.jpg' }}"
+                    <img src="{{ $article->image ? Storage::url($article->image) : asset('images-layout/default-article.png') }}"
                         alt="{{ $article->title }}"
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 </div>

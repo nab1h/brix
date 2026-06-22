@@ -26,15 +26,15 @@
                     <form action="{{ route('admin.careers.index') }}" method="GET" class="flex">
                         <div class="relative group mx-2">
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                <i class="fas fa-search text-gray-400 group-focus-within:text-[#E60914] transition"></i>
+                                <i class="fas fa-search text-gray-400 group-focus-within:text-[#6F8F7A] transition"></i>
                             </div>
                             <input type="text" name="search" value="{{ request('search') }}" placeholder="بحث بالاسم أو القسم..."
-                                class="bg-white border border-gray-300 text-gray-900 rounded-lg pl-3 pr-10 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] w-56 transition text-sm placeholder-gray-400">
+                                class="bg-white border border-gray-300 text-gray-900 rounded-lg pl-3 pr-10 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] w-56 transition text-sm placeholder-gray-400">
                         </div>
                     </form>
 
                     <!-- Create Button -->
-                    <a href="{{ route('admin.careers.create') }}" class="bg-[#E60914] hover:bg-red-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                    <a href="{{ route('admin.careers.create') }}" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
                         <i class="fas fa-plus"></i> إضافة وظيفة
                     </a>
                 </div>

@@ -17,7 +17,7 @@
             <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
 
                 <div class="border-b border-gray-200 bg-gray-50/50">
-                    <button type="button" onclick="openTab(event, 'general')" id="btn-general" class="px-6 py-4 text-sm font-medium text-gray-900 border-b-2 border-[#E60914] focus:outline-none">
+                    <button type="button" onclick="openTab(event, 'general')" id="btn-general" class="px-6 py-4 text-sm font-medium text-gray-900 border-b-2 border-[#6F8F7A] focus:outline-none">
                         عام (General)
                     </button>
                     <button type="button" onclick="openTab(event, 'contact')" id="btn-contact" class="px-6 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-900 focus:outline-none">
@@ -38,19 +38,19 @@
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">اسم الموقع (Site Name)</label>
                                 <input type="text" name="site_name" value="{{ old('site_name', $setting->site_name) }}"
-                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                             </div>
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">عنوان الصفحة (Title Tag)</label>
                                 <input type="text" name="site_title" value="{{ old('site_title', $setting->site_title) }}"
-                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                    class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                             </div>
                         </div>
 
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-medium mb-2">وصف الميتا (SEO Description)</label>
                             <textarea name="meta_description" rows="3"
-                                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">{{ old('meta_description', $setting->meta_description) }}</textarea>
+                                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">{{ old('meta_description', $setting->meta_description) }}</textarea>
                         </div>
 
                         <hr class="border-gray-200 my-6">
@@ -63,7 +63,7 @@
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">اللوجو (Logo)</label>
 
-                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-32 flex items-center justify-center hover:border-[#E60914] transition bg-gray-50 cursor-pointer group">
+                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-32 flex items-center justify-center hover:border-[#6F8F7A] transition bg-gray-50 cursor-pointer group">
 
                                     @if($setting->logo)
                                     <img src="{{ asset('storage/' . $setting->logo) }}" class="h-full w-full object-contain p-2 rounded-lg" alt="Logo">
@@ -72,7 +72,7 @@
                                     </div>
                                     @else
                                     <div class="text-center">
-                                        <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2 group-hover:text-[#E60914] transition"></i>
+                                        <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2 group-hover:text-[#6F8F7A] transition"></i>
                                         <p class="text-xs text-gray-500">اضغط لرفع اللوجو</p>
                                     </div>
                                     @endif
@@ -84,7 +84,7 @@
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">أيقونة (180x180)</label>
 
-                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-32 flex items-center justify-center hover:border-[#E60914] transition bg-gray-50 cursor-pointer group">
+                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-32 flex items-center justify-center hover:border-[#6F8F7A] transition bg-gray-50 cursor-pointer group">
 
                                     @if($setting->icon_180)
                                     <img src="{{ asset('storage/' . $setting->icon_180) }}" class="h-full w-full object-contain p-2 rounded-lg" alt="Icon">
@@ -93,7 +93,7 @@
                                     </div>
                                     @else
                                     <div class="text-center">
-                                        <i class="fas fa-image text-3xl text-gray-400 mb-2 group-hover:text-[#E60914] transition"></i>
+                                        <i class="fas fa-image text-3xl text-gray-400 mb-2 group-hover:text-[#6F8F7A] transition"></i>
                                         <p class="text-xs text-gray-500">رفع أيقونة</p>
                                     </div>
                                     @endif
@@ -105,12 +105,12 @@
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">أيقونة (32x32)</label>
 
-                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#E60914] transition bg-gray-50 cursor-pointer group">
+                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#6F8F7A] transition bg-gray-50 cursor-pointer group">
                                     @if($setting->icon_32)
                                     <img src="{{ asset('storage/' . $setting->icon_32) }}" class="h-12 w-12 object-contain" alt="Icon">
                                     @else
                                     <div class="text-center">
-                                        <i class="fas fa-icons text-2xl text-gray-400 group-hover:text-[#E60914] transition"></i>
+                                        <i class="fas fa-icons text-2xl text-gray-400 group-hover:text-[#6F8F7A] transition"></i>
                                     </div>
                                     @endif
                                     <input type="file" name="icon_32" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
@@ -120,12 +120,12 @@
                             <div>
                                 <label class="block text-gray-700 text-sm font-medium mb-2">أيقونة (16x16)</label>
 
-                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#E60914] transition bg-gray-50 cursor-pointer group">
+                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#6F8F7A] transition bg-gray-50 cursor-pointer group">
                                     @if($setting->icon_16)
                                     <img src="{{ asset('storage/' . $setting->icon_16) }}" class="h-12 w-12 object-contain" alt="Icon">
                                     @else
                                     <div class="text-center">
-                                        <i class="fas fa-icons text-2xl text-gray-400 group-hover:text-[#E60914] transition"></i>
+                                        <i class="fas fa-icons text-2xl text-gray-400 group-hover:text-[#6F8F7A] transition"></i>
                                     </div>
                                     @endif
                                     <input type="file" name="icon_16" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
@@ -135,7 +135,7 @@
                             <div class="md:col-span-2 lg:col-span-1">
                                 <label class="block text-gray-700 text-sm font-medium mb-2">ملف Manifest (.json)</label>
 
-                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#E60914] transition bg-gray-50 cursor-pointer group">
+                                <div class="relative w-full border-2 border-dashed border-gray-300 rounded-xl h-24 flex items-center justify-center hover:border-[#6F8F7A] transition bg-gray-50 cursor-pointer group">
                                     @if($setting->manifest)
                                     <div class="text-center">
                                         <i class="fas fa-file-code text-2xl text-purple-600 mb-1"></i>
@@ -162,13 +162,13 @@
                                 <div>
                                     <label class="block text-gray-700 text-sm font-medium mb-2">العنوان</label>
                                     <input type="text" name="address_ar" value="{{ old('address_ar', $setting->address_ar) }}"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition" dir="rtl">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition" dir="rtl">
                                 </div>
                                 <div>
                                     <label class="block text-gray-700 text-sm font-medium mb-2">أوقات العمل</label>
                                     <input type="text" name="hours_ar" value="{{ old('hours_ar', $setting->hours_ar) }}"
                                         placeholder="يومياً: 6:00 مساءً - 11:30 مساءً"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition" dir="rtl">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition" dir="rtl">
                                 </div>
                             </div>
 
@@ -179,26 +179,26 @@
                                 <div>
                                     <label class="block text-gray-700 text-sm font-medium mb-2">رقم الموبايل</label>
                                     <input type="text" name="mobile" value="{{ old('mobile', $setting->mobile) }}"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                                 </div>
 
                                 <div>
                                     <label class="block text-gray-700 text-sm font-medium mb-2">رقم الواتساب</label>
                                     <input type="text" name="whatsapp" value="{{ old('whatsapp', $setting->whatsapp) }}"
                                         placeholder="9665xxxxxxxx"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                                 </div>
 
                                 <div>
                                     <label class="block text-gray-700 text-sm font-medium mb-2">البريد الإلكتروني</label>
                                     <input type="email" name="email" value="{{ old('email', $setting->email) }}"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                                 </div>
 
                                 <div class="md:col-span-2">
                                     <label class="block text-gray-700 text-sm font-medium mb-2">كود خريطة جوجل (Iframe Embed Code)</label>
                                     <textarea name="map_link" rows="3"
-                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition text-sm font-mono">{{ old('map_link', $setting->map_link) }}</textarea>
+                                        class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition text-sm font-mono">{{ old('map_link', $setting->map_link) }}</textarea>
                                     <p class="text-xs text-gray-500 mt-1">انسخ كود الـ Embed من Google Maps وضعه هنا.</p>
                                 </div>
 
@@ -257,7 +257,7 @@
                     </div>
 
                     <div class="mt-8 pt-6 border-t border-gray-200 flex justify-end">
-                        <button type="submit" class="bg-[#E60914] hover:bg-[#C50812] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#E60914] focus:ring-offset-2 focus:ring-offset-white">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white font-bold py-3 px-8 rounded-lg transition shadow-sm focus:outline-none focus:ring-2 focus:ring-[#6F8F7A] focus:ring-offset-2 focus:ring-offset-white">
                             حفظ التغييرات
                         </button>
                     </div>
@@ -277,14 +277,14 @@
 
             tablinks = document.querySelectorAll("button[onclick^='openTab']");
             tablinks.forEach(function(btn) {
-                btn.classList.remove("border-[#E60914]", "text-gray-900");
+                btn.classList.remove("border-[#6F8F7A]", "text-gray-900");
                 btn.classList.add("border-transparent", "text-gray-500");
             });
 
             document.getElementById(tabName).style.display = "block";
 
             evt.currentTarget.classList.remove("border-transparent", "text-gray-500");
-            evt.currentTarget.classList.add("border-[#E60914]", "text-gray-900");
+            evt.currentTarget.classList.add("border-[#6F8F7A]", "text-gray-900");
         }
     </script>
 </x-app-layout>

@@ -24,10 +24,10 @@
                 <div class="flex gap-3 items-center">
                     <form action="{{ route('admin.contacts.index') }}" method="GET" class="flex gap-2 items-center">
                         <input type="text" name="search" value="{{ request('search') }}" placeholder="بحث بالاسم أو الموضوع..."
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] w-56 text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] w-56 text-sm">
 
                         <select name="filter" onchange="this.form.submit()"
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] cursor-pointer text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] cursor-pointer text-sm">
                             <option value="">الكل</option>
                             <option value="unread" {{ request('filter') == 'unread' ? 'selected' : '' }}>غير مقروءة</option>
                             <option value="read" {{ request('filter') == 'read' ? 'selected' : '' }}>مقروءة</option>
@@ -43,7 +43,7 @@
                     <h4 class="text-xl text-gray-900 font-bold mt-1">{{ $totalContacts }}</h4>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                    <p class="text-[#E60914] text-xs font-medium">رسائل غير مقروءة</p>
+                    <p class="text-[#6F8F7A] text-xs font-medium">رسائل غير مقروءة</p>
                     <h4 class="text-xl text-gray-900 font-bold mt-1">{{ $unreadContacts }}</h4>
                 </div>
             </div>

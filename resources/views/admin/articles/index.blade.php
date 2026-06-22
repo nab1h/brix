@@ -14,7 +14,7 @@
 
             <div class="flex justify-between items-center mb-8">
                 <h3 class="text-2xl font-bold text-gray-900">إدارة المقالات</h3>
-                <a href="{{ route('admin.articles.create') }}" class="bg-[#E60914] hover:bg-red-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                <a href="{{ route('admin.articles.create') }}" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-4 py-2.5 rounded-lg text-sm font-medium transition flex items-center gap-2">
                     <i class="fas fa-plus"></i> إضافة مقال
                 </a>
             </div>

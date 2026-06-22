@@ -26,36 +26,36 @@
                         <!-- Name -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">اسم البراند <span class="text-red-500">*</span></label>
-                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" required>
                         </div>
 
                         <!-- Image -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">صورة البراند</label>
-                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-[#E60914] hover:file:bg-red-100">
+                            <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded-lg px-4 py-2 bg-white text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-[#6F8F7A] hover:file:bg-red-100">
                         </div>
 
                         <!-- URL -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الرابط (URL)</label>
-                            <input type="url" name="url" value="{{ old('url') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="https://example.com">
+                            <input type="url" name="url" value="{{ old('url') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="https://example.com">
                         </div>
 
                         <!-- Years -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">السنوات</label>
-                            <input type="text" name="years" value="{{ old('years') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="مثال: 2010 - 2023">
+                            <input type="text" name="years" value="{{ old('years') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="مثال: 2010 - 2023">
                         </div>
 
                         <!-- Info -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">معلومات إضافية</label>
-                            <textarea name="info" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm">{{ old('info') }}</textarea>
+                            <textarea name="info" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm">{{ old('info') }}</textarea>
                         </div>
                     </div>
 
                     <div class="mt-6 flex items-center gap-4">
-                        <button type="submit" class="bg-[#E60914] hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
                             حفظ البراند
                         </button>
                         <a href="{{ route('admin.brands.index') }}" class="text-gray-500 hover:text-gray-700 text-sm font-medium transition">إلغاء</a>

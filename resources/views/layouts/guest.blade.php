@@ -8,8 +8,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -19,8 +19,8 @@
         --card: #ffffff;
         --border: #e2e8f0;
         --muted: #64748b;
-        --accent: #E60914;
-        --accent-light: #ff3a46;
+        --accent: #6F8F7A;
+        --accent-light: #6F8F7A;
         --surface: #f1f5f9;
     }
 
@@ -29,9 +29,9 @@
     }
 
     body {
-        font-family: 'Tajawal', sans-serif;
+        font-family: 'Alexandria', sans-serif;
         background: var(--bg);
-        color: #0f172a;
+        color: #17211D;
         overflow-x: hidden;
     }
 
@@ -39,9 +39,8 @@
         position: fixed;
         inset: 0;
         background:
-            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(230, 9, 20, 0.06), transparent),
-            radial-gradient(ellipse 60% 40% at 80% 60%, rgba(230, 9, 20, 0.04), transparent),
-            radial-gradient(ellipse 40% 30% at 20% 80%, rgba(230, 9, 20, 0.02), transparent);
+            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(23, 63, 53, 0.06), transparent),
+            radial-gradient(ellipse 60% 40% at 80% 60%, rgba(102, 112, 108, 0.04), transparent);
         pointer-events: none;
         z-index: -1;
     }

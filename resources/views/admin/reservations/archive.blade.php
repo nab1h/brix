@@ -29,18 +29,18 @@
                         <!-- Search by ID -->
                         <div class="relative group mx-5">
                             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                <i class="fas fa-search text-gray-400 group-focus-within:text-[#E60914] transition"></i>
+                                <i class="fas fa-search text-gray-400 group-focus-within:text-[#6F8F7A] transition"></i>
                             </div>
                             <input type="number"
                                 name="search_id"
                                 value="{{ request('search_id') }}"
                                 placeholder="بحث برقم ID"
-                                class="bg-white border border-gray-300 text-gray-900 rounded-lg pl-3 pr-10 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] w-40 transition text-sm placeholder-gray-400">
+                                class="bg-white border border-gray-300 text-gray-900 rounded-lg pl-3 pr-10 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] w-40 transition text-sm placeholder-gray-400">
                         </div>
 
                         <!-- Status Filter -->
                         <select name="status" onchange="this.form.submit()"
-                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] cursor-pointer text-sm">
+                            class="bg-white border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] cursor-pointer text-sm">
                             <option value="">الكل (All)</option>
                             <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>قيد الانتظار</option>
                             <option value="confirmed" {{ request('status') == 'confirmed' ? 'selected' : '' }}>مؤكد</option>
@@ -48,7 +48,7 @@
                             <option value="cancelled" {{ request('status') == 'cancelled' ? 'selected' : '' }}>ملغي</option>
                         </select>
 
-                        <button type="submit" class="bg-white text-gray-600 hover:text-[#E60914] px-3 py-2.5 rounded-lg border border-gray-300 hover:border-[#E60914] transition">
+                        <button type="submit" class="bg-white text-gray-600 hover:text-[#6F8F7A] px-3 py-2.5 rounded-lg border border-gray-300 hover:border-[#6F8F7A] transition">
                             <i class="fas fa-filter"></i>
                         </button>
                     </form>
@@ -85,11 +85,10 @@
                         <thead class="bg-gray-50 text-gray-500 text-xs uppercase border-b border-gray-200">
                             <tr>
                                 <th class="px-6 py-4 text-start">#ID</th>
-                                <th class="px-6 py-4 text-start">الاسم</th>
-                                <th class="px-6 py-4 text-start">الهاتف</th>
-                                <th class="px-6 py-4 text-start">الأفراد</th>
-                                <th class="px-6 py-4 text-start">التاريخ</th>
-                                <th class="px-6 py-4 text-start">الوقت</th>
+                                <th class="px-6 py-4 text-start">بيانات العميل</th>
+                                <th class="px-6 py-4 text-start">القسم</th>
+                                <th class="px-6 py-4 text-start">المواصفات</th>
+                                <th class="px-6 py-4 text-start">اللوجو</th>
                                 <th class="px-6 py-4 text-start">الحالة</th>
                                 <th class="px-6 py-4 text-center">إجراءات</th>
                             </tr>
@@ -101,24 +100,41 @@
 
                                 <td class="px-6 py-4 font-mono text-xs text-gray-400">#{{ $reservation->id }}</td>
 
-                                <td class="px-6 py-4 text-gray-900 font-medium">
-                                    {{ $reservation->name }}
+                                <td class="px-6 py-4 min-w-[240px]">
+                                    <div class="space-y-2">
+                                        <div class="font-semibold text-gray-900">{{ $reservation->name }}</div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-600" dir="ltr">
+                                            <i class="fas fa-phone text-gray-400"></i>
+                                            <span>{{ $reservation->phone }}</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-600">
+                                            <i class="fas fa-envelope text-gray-400"></i>
+                                            <span>{{ $reservation->email ?? '-' }}</span>
+                                        </div>
+                                        @if($reservation->brand)
+                                        <span class="inline-flex bg-gray-100 text-gray-700 border border-gray-200 px-2 py-1 rounded-lg text-xs">{{ $reservation->brand }}</span>
+                                        @endif
+                                    </div>
                                 </td>
 
                                 <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->phone }}
+                                    {{ $reservation->category ?? '-' }}
                                 </td>
 
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->guests }}
+                                <td class="px-6 py-4 text-xs text-gray-600 whitespace-nowrap leading-6">
+                                    <span class="block">{{ $reservation->product_length }} × {{ $reservation->product_width }} × {{ $reservation->product_height }} سم</span>
+                                    <span class="block">{{ $reservation->paper_weight }} جرام — {{ $reservation->material }}</span>
+                                    <span class="block font-semibold text-gray-800">{{ number_format($reservation->quantity ?? 0) }} قطعة</span>
                                 </td>
 
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->reservation_date }}
-                                </td>
-
-                                <td class="px-6 py-4 text-gray-600">
-                                    {{ $reservation->reservation_time }}
+                                <td class="px-6 py-4">
+                                    @if($reservation->brand_logo)
+                                    <a href="{{ Storage::url($reservation->brand_logo) }}" target="_blank" class="block w-12 h-12 rounded-lg overflow-hidden border border-gray-200 bg-white">
+                                        <img src="{{ Storage::url($reservation->brand_logo) }}" alt="لوجو {{ $reservation->brand }}" class="w-full h-full object-contain">
+                                    </a>
+                                    @else
+                                    <span class="text-gray-400 text-xs">-</span>
+                                    @endif
                                 </td>
 
                                 <td class="px-6 py-4">
@@ -162,7 +178,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="8" class="text-center py-10 text-gray-500">
+                                <td colspan="7" class="text-center py-10 text-gray-500">
                                     لا توجد حجوزات مؤرشفة حالياً
                                 </td>
                             </tr>

@@ -1,6 +1,6 @@
 @extends('layouts.brix')
 @section('title', 'أعمال مع '. $brand->name)
-@section('hero_image', asset(Storage::url($brand->image)))
+@section('hero_image', $brand->image ? Storage::url($brand->image) : asset('images-layout/default-hero.png'))
 
 @section('content')
 <div class="bg-gradient-to-b from-cream/30 to-white min-h-screen" dir="rtl">

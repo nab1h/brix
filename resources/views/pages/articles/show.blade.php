@@ -1,6 +1,6 @@
 @extends('layouts.brix')
 @section('title',$article->title )
-@section('hero_image', asset(Storage::url($article->image)))
+@section('hero_image', $article->image ? Storage::url($article->image) : asset('images-layout/default-hero.png'))
 @section('content')
 
 <section class="py-16 md:py-20">
@@ -45,7 +45,7 @@
 
                                 <!-- صورة مصغرة للمقال -->
                                 <div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 border border-sand/30">
-                                    <img src="{{ $latestArticle->image ? Storage::url($latestArticle->image) : 'https://picsum.photos/seed/default-side/100/100.jpg' }}"
+                                    <img src="{{ $latestArticle->image ? Storage::url($latestArticle->image) : asset('images-layout/default-article.png') }}"
                                         alt="{{ $latestArticle->title }}"
                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                 </div>

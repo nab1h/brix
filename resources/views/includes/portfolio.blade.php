@@ -1,5 +1,5 @@
 <!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio-bg py-24 md:py-40">
+<section id="portfolio" class="portfolio-bg py-20 md:py-28 bg-cream/50">
     <div class="max-w-[1400px] mx-auto px-6 md:px-12">
         <div class="text-center mb-12">
             <span class="reveal text-terracotta text-sm font-bold tracking-[0.15em]">أعمالنا</span>
@@ -26,7 +26,7 @@
             @foreach($portfolios as $portfolio)
             <a href="{{ route('brand.show',$portfolio->brand->slug) }}">
                 <div class="portfolio-item reveal card-lift group cursor-pointer">
-                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5]">
+                    <div class="relative img-reveal rounded-2xl overflow-hidden aspect-[4/5] border border-sand bg-white">
 
                         @if($portfolio->brand)
                         <div class="absolute top-4 right-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-2 rounded-full shadow-lg transition-transform duration-300 group-hover:scale-105 border border-white/50">
@@ -41,7 +41,7 @@
                         </div>
                         @endif
 
-                        <img src="{{ $portfolio->image ? Storage::url($portfolio->image) : 'https://picsum.photos/seed/default-port/500/625.jpg' }}"
+                        <img src="{{ $portfolio->image ? Storage::url($portfolio->image) : asset('images-layout/default-card.png') }}"
                             alt="{{ $portfolio->name }}"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
 

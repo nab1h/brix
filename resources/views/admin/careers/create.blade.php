@@ -26,36 +26,36 @@
                         <!-- Name -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">اسم الوظيفة <span class="text-red-500">*</span></label>
-                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" required>
+                            <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" required>
                         </div>
 
                         <!-- Department -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">القسم <span class="text-red-500">*</span></label>
-                            <input type="text" name="depart" value="{{ old('depart') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="مثال: قسم التسويق" required>
+                            <input type="text" name="depart" value="{{ old('depart') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="مثال: قسم التسويق" required>
                         </div>
 
                         <!-- Location -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الموقع</label>
-                            <input type="text" name="location" value="{{ old('location') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="مثال: الرياض - عن بعد">
+                            <input type="text" name="location" value="{{ old('location') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="مثال: الرياض - عن بعد">
                         </div>
 
                         <!-- Experience -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">الخبرة</label>
-                            <input type="text" name="experience" value="{{ old('experience') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm" placeholder="مثال: 2-3 سنوات">
+                            <input type="text" name="experience" value="{{ old('experience') }}" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm" placeholder="مثال: 2-3 سنوات">
                         </div>
                     </div>
 
                     <!-- Description -->
                     <div class="mt-6">
                         <label class="block text-sm font-medium text-gray-700 mb-1">الوصف الوظيفي</label>
-                        <textarea name="description" rows="5" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] text-sm">{{ old('description') }}</textarea>
+                        <textarea name="description" rows="5" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] text-sm">{{ old('description') }}</textarea>
                     </div>
 
                     <div class="mt-6 flex items-center gap-4">
-                        <button type="submit" class="bg-[#E60914] hover:bg-red-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
+                        <button type="submit" class="bg-[#6F8F7A] hover:bg-[#587061] text-white px-6 py-2.5 rounded-lg text-sm font-medium transition">
                             حفظ الوظيفة
                         </button>
                         <a href="{{ route('admin.careers.index') }}" class="text-gray-500 hover:text-gray-700 text-sm font-medium transition">إلغاء</a>

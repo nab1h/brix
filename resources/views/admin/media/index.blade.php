@@ -30,7 +30,7 @@
                         <h3 class="text-xl font-bold text-gray-900 mb-6">صورة البديل</h3>
                         <p class="text-gray-600 text-sm mb-6">صورة تظهر إذا لم يتم تحميل الفيديو.</p>
 
-                        <form action="{{ route('admin.media.store') }}" method="POST" enctype="multipart/form-data" class="border-2 border-dashed border-gray-300 rounded-xl p-10 text-center hover:border-[#E60914] transition bg-gray-50">
+                        <form action="{{ route('admin.media.store') }}" method="POST" enctype="multipart/form-data" class="border-2 border-dashed border-gray-300 rounded-xl p-10 text-center hover:border-[#6F8F7A] transition bg-gray-50">
                             @csrf
                             <input type="hidden" name="type" value="hero_image">
 
@@ -52,9 +52,9 @@
                             <form action="{{ route('admin.media.store') }}" method="POST" enctype="multipart/form-data" class="flex gap-4 items-end">
                                 @csrf
                                 <input type="hidden" name="type" value="gallery_image">
-                                <input type="text" name="title" placeholder="وصف الصورة (اختياري)" class="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-[#E60914] focus:border-[#E60914] transition">
+                                <input type="text" name="title" placeholder="وصف الصورة (اختياري)" class="bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 text-sm focus:outline-none focus:ring-1 focus:ring-[#6F8F7A] focus:border-[#6F8F7A] transition">
                                 <input type="file" name="file" accept="image/*" class="block text-sm text-gray-600 file:mr-4 file:py-2 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-600 file:text-white hover:file:bg-purple-700">
-                                <button type="submit" class="px-4 py-2 bg-[#E60914] text-white text-xs rounded-lg font-bold hover:bg-red-700 transition">إضافة صورة</button>
+                                <button type="submit" class="px-4 py-2 bg-[#6F8F7A] text-white text-xs rounded-lg font-bold hover:bg-red-700 transition">إضافة صورة</button>
                             </form>
                         </div>
 
@@ -98,7 +98,7 @@
 
             tablinks = document.querySelectorAll("button[onclick^='openMediaTab']");
             tablinks.forEach(function(btn) {
-                btn.classList.remove("border-[#E60914]", "text-gray-900");
+                btn.classList.remove("border-[#6F8F7A]", "text-gray-900");
                 btn.classList.add("border-transparent", "text-gray-500");
             });
 
@@ -108,7 +108,7 @@
             targetTab.classList.add("block");
 
             evt.currentTarget.classList.remove("border-transparent", "text-gray-500");
-            evt.currentTarget.classList.add("border-[#E60914]", "text-gray-900");
+            evt.currentTarget.classList.add("border-[#6F8F7A]", "text-gray-900");
         }
     </script>
 </x-app-layout>

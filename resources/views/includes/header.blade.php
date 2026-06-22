@@ -8,7 +8,7 @@
 
     <meta name="description" content="{{ $setting->meta_description ?? 'Luxury Fine Dining Experience' }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -34,46 +34,44 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#FA6B31',
-                        secondary: '#1946AF',
-                        ivory: '#FAF7F2',
-                        cream: '#F5F0E8',
-                        sand: '#E8E0D4',
+                        primary: '#6F8F7A',
+                        secondary: '#7B8580',
+                        ivory: '#FFFFFF',
+                        cream: '#F3F7F4',
+                        sand: '#DCE6DF',
                         warm: {
-                            50: '#FDF9F4',
-                            100: '#FAF3E8',
-                            200: '#F0E4D0',
-                            300: '#D4C4A8',
-                            400: '#B8A080',
-                            500: '#8C7A60',
-                            600: '#6B5D4A',
-                            700: '#4A3F32',
-                            // blue
-                            800: '#42ADDC',
-                            // black done change to blue
-                            900: '#42ADDC'
+                            50: '#F8FAF8',
+                            100: '#F1F5F2',
+                            200: '#E5EBE7',
+                            300: '#CFD8D2',
+                            400: '#98A39C',
+                            500: '#737E77',
+                            600: '#5E6962',
+                            700: '#47524B',
+                            800: '#354039',
+                            900: '#29332D'
                         },
                         // primary color
-                        terracotta: '#F54926',
+                        terracotta: '#6F8F7A',
                         olive: {
-                            50: '#F4F6EF',
-                            100: '#E8ECD9',
-                            200: '#D1D9B3',
-                            400: '#8B9A6B',
-                            600: '#5C6B42',
-                            800: '#3A4528'
+                            50: '#F5F8F6',
+                            100: '#E7F0EA',
+                            200: '#D5E4DA',
+                            400: '#91A997',
+                            600: '#6F8F7A',
+                            800: '#587061'
                         },
                         brand: {
-                            orange: '#FA6B31',
-                            'orange-deep': '#E85A20',
-                            blue: '#1946AF',
-                            'blue-deep': '#0F2E79',
-                            navy: '#0F172A'
+                            orange: '#89928D',
+                            'orange-deep': '#707A74',
+                            blue: '#6F8F7A',
+                            'blue-deep': '#587061',
+                            navy: '#354039'
                         }
                     },
                     fontFamily: {
-                        serif: ['Amiri', 'serif'],
-                        sans: ['Cairo', 'sans-serif']
+                        serif: ['Alexandria', 'sans-serif'],
+                        sans: ['Alexandria', 'sans-serif']
                     }
                 }
             }
@@ -81,18 +79,18 @@
     </script>
     <style>
         * {
-            font-family: 'Cairo', sans-serif
+            font-family: 'Alexandria', sans-serif
         }
 
         h1,
         h2,
         h3,
         .font-serif {
-            font-family: 'Amiri', serif
+            font-family: 'Alexandria', sans-serif
         }
 
         ::selection {
-            background: #FA6B31;
+            background: #6F8F7A;
             color: #fff
         }
 
@@ -101,11 +99,11 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #FAF7F2
+            background: #F3F7F4
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #C4572A;
+            background: #6F8F7A;
             border-radius: 3px
         }
 
@@ -154,7 +152,7 @@
         }
 
         .paper-texture {
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")
+            background-image: none
         }
 
         .mega-panel {
@@ -197,7 +195,12 @@
         }
 
         .nav-link {
-            position: relative
+            position: relative;
+            color: #111827 !important;
+        }
+
+        .nav-link:hover {
+            color: #6F8F7A !important;
         }
 
         .nav-link::after {
@@ -207,7 +210,7 @@
             right: 0;
             width: 0;
             height: 1.5px;
-            background: #C4572A;
+            background: #6F8F7A;
             transition: width .4s cubic-bezier(.16, 1, .3, 1)
         }
 
@@ -215,17 +218,53 @@
             width: 100%
         }
 
+        .mobile-link,
+        #mobile-panel nav > a,
+        #mobile-panel nav button {
+            color: #111827 !important;
+        }
+
+        .mobile-link:hover,
+        #mobile-panel nav > a:hover,
+        #mobile-panel nav button:hover {
+            color: #6F8F7A !important;
+        }
+
+        #hero h1,
+        #page-hero #hero-title {
+            line-height: 1.45 !important;
+        }
+
+        #hero p,
+        #page-hero #hero-subtitle {
+            line-height: 2 !important;
+        }
+
         .card-lift {
             transition: all .5s cubic-bezier(.16, 1, .3, 1)
         }
 
         .card-lift:hover {
-            transform: translateY(-6px)
+            transform: translateY(-3px)
         }
 
         .filter-active {
-            background: #C4572A !important;
-            color: #fff !important
+            background: #DDEADF !important;
+            color: #354039 !important;
+            border-color: #C5D8CA !important
+        }
+
+        a.bg-terracotta,
+        button.bg-terracotta {
+            background-color: #DDEADF !important;
+            color: #354039 !important;
+            border: 1px solid #C5D8CA;
+        }
+
+        a.bg-terracotta:hover,
+        button.bg-terracotta:hover {
+            background-color: #CFE0D3 !important;
+            color: #29332D !important;
         }
 
         .toast-msg {
@@ -243,8 +282,8 @@
         .mobile-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(26, 22, 18, 0.5);
-            z-index: 61;
+            background: rgba(41, 51, 45, 0.28);
+            z-index: 1000;
             opacity: 0;
             pointer-events: none;
             transition: opacity .4s ease
@@ -262,12 +301,12 @@
             width: 85%;
             max-width: 360px;
             height: 100%;
-            z-index: 62;
-            background: #FAF7F2;
+            z-index: 1001;
+            background: #FFFFFF;
             transform: translateX(100%);
             transition: transform .4s cubic-bezier(.16, 1, .3, 1);
             overflow-y: auto;
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15)
+            box-shadow: -12px 0 35px rgba(41, 51, 45, 0.10)
         }
 
         .mobile-panel.active {
@@ -293,11 +332,7 @@
         }
 
         .bg-print-halftone {
-            background-image:
-                radial-gradient(rgba(25, 70, 175, 0.1) 1px, transparent 1px),
-                radial-gradient(rgba(250, 107, 49, 0.08) 1px, transparent 1px);
-            background-size: 20px 20px, 30px 30px;
-            background-position: 0 0, 15px 15px;
+            background-image: none;
         }
 
         @keyframes lineGrow {
@@ -324,143 +359,69 @@
         /* image bg pages */
 
         .contact-bg-form {
-            background-image: url('bg/contact-form-bg.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
+            background-image: none;
+            background-color: #F3F7F4;
+            box-shadow: none !important;
 
 
         }
 
-        .contact-bg {
-            background-image:
-                url('bg/tables-left-dec.png'),
-                url('bg/services-left-dec.png');
-
-            background-repeat: no-repeat, no-repeat;
-
-            background-position: left center, right center;
-
-            background-size: 40%, 40%;
-
-            min-height: 100vh;
+        .value-bg,
+        .faq-bg,
+        .footer-bg {
+            background-image: none !important;
         }
-
-        .faq-bg {
-            background-image:
-                url('bg/tables-left-dec.png'),
-                url('bg/services-right-dec.png');
-
-            background-repeat: no-repeat, no-repeat;
-
-            background-position: left center, right bottom;
-
-            background-size: 40%, 30%;
-
-            min-height: 100vh;
-        }
-
-        @media (max-width: 768px) {
-
-            .contact-bg,
-            .faq-bg {
-                background-size: 70%, 70%;
-                background-position: left center, right center;
-                min-height: 100vh;
-            }
-        }
-
-        /* pricing */
-        .pricing-bg-right {
-            background-image: url('bg/pricing-right-dec.png');
-            background-repeat: no-repeat;
-            background-position: right;
-            background-size: 100%;
-
-        }
-
-        .pricing-bg {
-            background-image: url('bg/pricing-left-dec.png');
-            background-repeat: no-repeat;
-            background-position: left;
-            background-size: 25%;
-
-        }
-
-        /* about-bg */
-
-        .about-bg {
-            background-image: url('bg/baner-dec-left.png');
-            background-repeat: no-repeat;
-            background-position: left;
-            background-size: 30%;
-        }
-
-        /* footer-bg */
 
         .footer-bg {
-            background-image: url('bg/footer-dec.png');
-            background-repeat: no-repeat;
-            background-position: top;
-            background-size: 100%;
+            background-color: #E7F0EA !important;
+            color: #354039 !important;
         }
 
-        /* portfolio-bg */
-
-        .portfolio-bg {
-            background-image: url('bg/portfolio-left-dec.png');
-            background-repeat: no-repeat;
-            background-position: top left;
-            background-size: 40%;
+        .footer-bg .text-ivory {
+            color: #354039 !important;
         }
 
-        /* value-bg */
-
-        .value-bg {
-            background-image: url('bg/value-left-dec.png');
-            background-repeat: no-repeat;
-            background-position: bottom left;
-            background-size: 20%;
+        .footer-bg .text-warm-400,
+        .footer-bg .text-warm-500 {
+            color: #66736B !important;
         }
 
-        /* services-bg */
-        .services-bg {
-            background-image: url('bg/cervices-right-dec.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 90%;
+        .footer-bg .border-warm-600,
+        .footer-bg .border-warm-700 {
+            border-color: #C8D8CD !important;
         }
 
-        .brand-bg {
-            background-image: url('/bg/subscribe-bg.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            min-height: 300px;
-            border: 3px solid red;
+        .text-yellow-500 {
+            color: #6F8F7A !important;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+        button,
+        a,
+        input,
+        select,
+        textarea {
+            transition-duration: 250ms !important;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .shadow-xl,
+        .shadow-2xl {
+            box-shadow: 0 16px 45px rgba(53, 64, 57, 0.08) !important;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+        #navbar {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(220, 230, 223, 0.85);
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        input:focus,
+        select:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 3px rgba(111, 143, 122, 0.10);
         }
+
+
+
     </style>
 </head>
 
@@ -485,7 +446,6 @@
             </div>
             <nav class="space-y-1">
                 <a href="{{ route('home') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الرئيسية</a>
-                <a href="{{ route('about') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">من نحن</a>
 
                 <!-- قائمة الخدمات (Accordion) -->
                 <div>
@@ -495,10 +455,15 @@
                     </button>
                     <div id="services-dropdown" class="hidden pr-4 space-y-2 pb-2">
                         @foreach ($categories as $category)
-                        <a href="{{ route('services') }}" onclick="closeMobile()" class="flex items-center gap-3 p-2 rounded-xl hover:bg-cream transition-colors group">
-                            <div>
+                        <a href="{{ route('services.show', $category) }}" onclick="closeMobile()" class="flex items-center gap-3 p-2 rounded-xl hover:bg-cream transition-colors group">
+                            @if($category->img)
+                            <img src="{{ Storage::url($category->img) }}" alt="{{ $category->name }}" class="w-12 h-12 rounded-xl object-cover border border-sand shrink-0">
+                            @else
+                            <span class="w-12 h-12 rounded-xl bg-olive-100 text-terracotta flex items-center justify-center shrink-0"><i class="fas fa-print text-sm"></i></span>
+                            @endif
+                            <div class="min-w-0">
                                 <span class="text-sm font-bold text-warm-800 group-hover:text-terracotta transition-colors">{{ $category->name }}</span>
-                                <span class="block text-[11px] text-warm-400">{{ $category->description }}</span>
+                                <span class="block text-[11px] text-warm-400 line-clamp-1">{{ $category->description }}</span>
                             </div>
                         </a>
                         @endforeach
@@ -538,15 +503,11 @@
                 </div>
 
                 <a href="{{ route('quote') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">عرض سعر</a>
-                <a href="{{ route('careers') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">الوظايف</a>
                 <a href="{{ route('contact') }}" onclick="closeMobile()" class="mobile-link block py-3 text-lg font-serif font-bold text-warm-800 hover:text-terracotta transition-colors">تواصل معنا</a>
             </nav>
 
             <div class="mt-10 pt-8 border-t border-sand">
                 <a href="{{ route('quote') }}" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
-            </div>
-            <div class="mt-10 pt-8 border-t border-sand">
-                <a href="#quote" onclick="closeMobile()" class="mobile-link block w-full py-4 bg-terracotta text-ivory text-center font-bold rounded-full hover:bg-warm-800 transition-colors">اطلب عرض سعر</a>
             </div>
         </div>
     </div>
@@ -555,27 +516,32 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-500">
         <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-            <div class="flex items-center justify-between h-20 md:h-24">
+            <div class="flex items-center justify-between h-20 md:h-[88px] gap-6">
                 <!-- Logo -->
-                <a href="{{ route('home') }}" class="logo flex items-center gap-2">
+                <a href="{{ route('home') }}" class="logo order-3 flex items-center gap-2 shrink-0">
                     @if($setting->logo)
-                    <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-20 w-auto">
+                    <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-14 md:h-16 w-auto object-contain">
                     @else
-                    <i class="fas fa-utensils text-[#E60914]"></i>
+                    <i class="fas fa-print text-terracotta"></i>
                     @endif
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center gap-8">
+                <div class="order-1 hidden lg:flex items-center gap-6">
                     <a href="{{ route('home') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الرئيسية</a>
-                    <a href="{{ route('about') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">من نحن</a>
                     <div class="mega-trigger relative">
                         <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">الخدمات <i class="fas fa-chevron-down text-[8px]"></i></button>
-                        <div class="mega-panel absolute top-full right-0 pt-4" style="width:640px">
-                            <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
+                        <div class="mega-panel absolute top-full right-0 pt-5 w-[360px]">
+                            <div class="bg-white border border-sand rounded-2xl shadow-xl p-2 max-h-[440px] overflow-y-auto">
                                 @foreach ($categories as $category)
-                                <a href="{{ route('services') }}" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
-                                    <div><span class="text-sm font-bold">{{ $category->name }}</span><span class="block text-[11px] text-warm-400">{{ $category->description }}</span></div>
+                                <a href="{{ route('services.show', $category) }}" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-cream transition-colors group">
+                                    @if($category->img)
+                                    <img src="{{ Storage::url($category->img) }}" alt="{{ $category->name }}" class="w-14 h-14 rounded-xl object-cover border border-sand shrink-0">
+                                    @else
+                                    <span class="w-14 h-14 rounded-xl bg-olive-100 text-terracotta flex items-center justify-center shrink-0 group-hover:bg-terracotta group-hover:text-white transition-colors"><i class="fas fa-print text-sm"></i></span>
+                                    @endif
+                                    <div class="min-w-0"><span class="block text-sm font-semibold text-warm-800 group-hover:text-terracotta">{{ $category->name }}</span><span class="block text-xs text-warm-400 mt-1 truncate">{{ $category->description }}</span></div>
+                                    <i class="fas fa-arrow-left text-[10px] text-warm-300 mr-auto group-hover:text-terracotta group-hover:-translate-x-1 transition-all"></i>
                                 </a>
                                 @endforeach
                             </div>
@@ -586,15 +552,15 @@
 
                     <div class="mega-trigger relative">
                         <button class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors flex items-center gap-1">شركاء النجاح <i class="fas fa-chevron-down text-[8px]"></i></button>
-                        <div class="mega-panel absolute top-full right-0" style="width:640px">
-                            <div class="bg-ivory border border-sand rounded-2xl shadow-xl p-6 grid grid-cols-2 gap-2">
+                        <div class="mega-panel absolute top-full right-0 pt-5 w-[360px]">
+                            <div class="bg-white border border-sand rounded-2xl shadow-xl p-2 max-h-[440px] overflow-y-auto">
                                 @foreach ($allBrands as $brand)
-                                <a href="{{ route('brand.show', $brand->slug) }}" class="flex items-center gap-3 p-3 rounded-xl hover:bg-cream transition-colors group">
+                                <a href="{{ route('brand.show', $brand->slug) }}" class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-cream transition-colors group">
 
                                     @if($brand->image)
-                                    <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="w-20 h-20 rounded-lg object-cover bg-white p-1 border border-sand/50 flex-shrink-0">
+                                    <img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}" class="w-14 h-14 rounded-xl object-cover bg-white border border-sand flex-shrink-0">
                                     @else
-                                    <div class="w-10 h-10 rounded-lg bg-cream flex items-center justify-center border border-sand/50 flex-shrink-0">
+                                    <div class="w-14 h-14 rounded-xl bg-olive-100 flex items-center justify-center border border-sand flex-shrink-0">
                                         <i class="fas fa-building text-warm-400 text-sm"></i>
                                     </div>
                                     @endif
@@ -604,20 +570,21 @@
                                         <span class="block text-[11px] text-warm-400 line-clamp-1">{{ $brand->info }}</span>
                                     </div>
 
+                                    <i class="fas fa-arrow-left text-[10px] text-warm-300 mr-auto group-hover:text-terracotta group-hover:-translate-x-1 transition-all"></i>
+
                                 </a>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                     <a href="{{ route('quote') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">عرض سعر</a>
-                    <a href="{{ route('careers') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">الوظايف</a>
                     <a href="{{ route('contact') }}" class="nav-link text-sm font-semibold text-warm-700 hover:text-terracotta transition-colors">تواصل معنا</a>
                 </div>
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="{{ route('quote') }}" class="px-6 py-2.5 bg-terracotta text-ivory text-sm font-bold rounded-full hover:bg-warm-800 transition-all duration-300">اطلب عرض سعر</a>
+                <div class="order-2 hidden lg:flex items-center gap-4 mr-auto">
+                    <a href="{{ route('quote') }}" class="px-5 py-2.5 bg-terracotta text-ivory text-sm font-semibold rounded-xl hover:bg-olive-800 transition-all duration-300">اطلب عرض سعر</a>
                 </div>
                 <!-- Mobile Toggle -->
-                <button id="menu-toggle-btn" onclick="openMobile()" class="lg:hidden w-10 h-10 flex items-center justify-center text-warm-700">
+                <button id="menu-toggle-btn" onclick="openMobile()" class="order-1 lg:hidden w-10 h-10 rounded-xl bg-cream flex items-center justify-center text-warm-700">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>

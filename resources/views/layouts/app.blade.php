@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -27,14 +27,14 @@
             --card: #ffffff;
             --border: #e2e8f0;
             --muted: #64748b;
-            --accent: #E60914;
+            --accent: #6F8F7A;
             --surface: #f1f5f9;
         }
 
         body {
             background-color: var(--bg);
-            color: #0f172a;
-            font-family: 'Tajawal', sans-serif;
+            color: #17211D;
+            font-family: 'Alexandria', sans-serif;
         }
 
         ::-webkit-scrollbar {
@@ -59,7 +59,7 @@
             position: fixed;
             inset: 0;
             background:
-                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(230, 9, 20, 0.06), transparent),
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(23, 63, 53, 0.06), transparent),
                 #f8fafc;
             pointer-events: none;
             z-index: -1;
