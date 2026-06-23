@@ -1,71 +1,47 @@
  <!-- FOOTER -->
- <footer class="footer-bg bg-warm-50 text-warm-200 pt-20 pb-8">
+ <footer class="footer-bg border-t border-sand py-8">
      <div class="max-w-[1400px] mx-auto px-6 md:px-12">
-         <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-             <div>
-                 <div class="flex items-center gap-3 mb-6">
-                     <a href="{{ route('home') }}" class="footer-logo flex items-center justify-center gap-2">
-                         @if($setting->logo)
-                         <img src="{{ asset('storage/' . $setting->logo) }}" class="h-20 w-auto">
-                         @endif
-                         {{ $setting->site_name ?? 'AURUM' }}<span>.</span>
-                     </a>
-                 </div>
-                 <p class="text-sm text-warm-400 leading-[1.9] mb-6">شريكك الإبداعي في عالم الطباعة والإعلان.</p>
-                 <div class="flex gap-3">
-                     @if($setting->facebook)
-                     <a href="{{ $setting->facebook }}" class="w-9 h-9 rounded-full border border-warm-600 flex items-center justify-center text-warm-400 hover:border-terracotta hover:text-terracotta transition-all text-sm" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                     @endif
-                     @if($setting->instagram)
-                     <a href="{{ $setting->instagram }}" class="w-9 h-9 rounded-full border border-warm-600 flex items-center justify-center text-warm-400 hover:border-terracotta hover:text-terracotta transition-all text-sm" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
-                     @endif
-                     @if($setting->twitter)
-                     <a href="{{ $setting->twitter }}" class="w-9 h-9 rounded-full border border-warm-600 flex items-center justify-center text-warm-400 hover:border-terracotta hover:text-terracotta transition-all text-sm" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
-                     @endif
-                     @if($setting->snapchat)
-                     <a href="{{ $setting->snapchat }}" class="w-9 h-9 rounded-full border border-warm-600 flex items-center justify-center text-warm-400 hover:border-terracotta hover:text-terracotta transition-all text-sm" target="_blank" class="social-link"><i class="fab fa-snapchat-ghost"></i></a>
-                     @endif
-                     @if($setting->tiktok)
-                     <a href="{{ $setting->tiktok }}" class="w-9 h-9 rounded-full border border-warm-600 flex items-center justify-center text-warm-400 hover:border-terracotta hover:text-terracotta transition-all text-sm" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
-                     @endif
-                 </div>
-             </div>
-             <div>
-                 <h4 class="font-serif text-lg font-bold text-ivory mb-6">روابط سريعة</h4>
-                 <ul class="space-y-3">
-                     <li><a href="{{ route('services') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الخدمات</a></li>
-                     <li><a href="{{ route('portfolio') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">أعمالنا</a></li>
-                     <li><a href="{{ route('articles.index') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">المدونة</a></li>
-                     <li><a href="{{ route('quote') }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">الأسعار</a></li>
-                 </ul>
-             </div>
-             <div>
-                 <h4 class="font-serif text-lg font-bold text-ivory mb-6">شركاء النجاح</h4>
-                 <ul class="space-y-3">
-                     @foreach ($allBrands as $brand)
-                     <li><a href="{{ route('brand.show',$brand->slug) }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $brand->name }}</a></li>
-                     @endforeach
-                 </ul>
-             </div>
-             <div>
-                 <h4 class="font-serif text-lg font-bold text-ivory mb-6">خدماتنا</h4>
-                 <ul class="space-y-3">
-                     @foreach ($categories as $category)
-                     <li><a href="{{ route('services.show', $category) }}" class="text-sm text-warm-400 hover:text-terracotta transition-colors">{{ $category->name }}</a></li>
-                     @endforeach
+         <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+             <a href="{{ route('home') }}" class="flex items-center">
+                 @if($setting->logo)
+                 <img src="{{ asset('storage/' . $setting->logo) }}" alt="{{ $setting->site_name }}" class="h-12 w-auto object-contain">
+                 @else
+                 <span class="font-semibold text-warm-900">{{ $setting->site_name ?? 'Brix' }}</span>
+                 @endif
+             </a>
 
-                 </ul>
+             <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs text-warm-500">
+                 @if($setting->mobile)
+                 <a href="tel:{{ $setting->mobile }}" class="flex items-center gap-2 hover:text-terracotta transition-colors" dir="ltr">
+                     <i class="fas fa-phone"></i><span>{{ $setting->mobile }}</span>
+                 </a>
+                 @endif
+                 @if($setting->email)
+                 <a href="mailto:{{ $setting->email }}" class="flex items-center gap-2 hover:text-terracotta transition-colors">
+                     <i class="fas fa-envelope"></i><span>{{ $setting->email }}</span>
+                 </a>
+                 @endif
+                 @if($setting->address_ar)
+                 <span class="flex items-center gap-2"><i class="fas fa-location-dot"></i><span>{{ $setting->address_ar }}</span></span>
+                 @endif
              </div>
-             <div>
-                 <h4 class="font-serif text-lg font-bold text-ivory mb-6">تواصل معنا</h4>
-                 <ul class="space-y-3">
-                     <li class="flex items-center gap-2 text-sm text-warm-400"><i class="fas fa-phone text-xs text-terracotta"></i>{{ $setting->mobile }}</li>
-                     <li class="flex items-center gap-2 text-sm text-warm-400"><i class="fas fa-envelope text-xs text-terracotta"></i>{{ $setting->email }}</li>
-                     <li class="flex items-center gap-2 text-sm text-warm-400"><i class="fas fa-location-dot text-xs text-terracotta"></i>{{ $setting->address_ar }}</li>
-                 </ul>
+
+             <div class="flex items-center gap-2">
+                 @foreach([
+                    ['url' => $setting->facebook, 'icon' => 'fab fa-facebook-f', 'label' => 'Facebook'],
+                    ['url' => $setting->instagram, 'icon' => 'fab fa-instagram', 'label' => 'Instagram'],
+                    ['url' => $setting->twitter, 'icon' => 'fab fa-twitter', 'label' => 'Twitter'],
+                    ['url' => $setting->tiktok, 'icon' => 'fab fa-tiktok', 'label' => 'TikTok'],
+                 ] as $social)
+                 @if($social['url'])
+                 <a href="{{ $social['url'] }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $social['label'] }}" class="w-9 h-9 rounded-xl border border-sand flex items-center justify-center text-warm-500 hover:bg-white hover:text-terracotta transition-colors text-sm">
+                     <i class="{{ $social['icon'] }}"></i>
+                 </a>
+                 @endif
+                 @endforeach
              </div>
          </div>
-         <div class="border-t border-warm-700 pt-8 flex flex-wrap items-center justify-between gap-4">
+         <div class="mt-7 pt-5 border-t border-sand text-center sm:text-right">
              <p class="text-xs text-warm-500">© 2026 Avora-Tech جميع الحقوق محفوظة.</p>
          </div>
      </div>
@@ -327,9 +303,15 @@
 
      // ===== Testimonials Slider =====
      let testiCurrent = 0;
-     const testiTotal = 5;
+
+     function getTestiTotal() {
+         const track = document.getElementById('testi-track');
+         return track ? track.children.length : 0;
+     }
 
      function slideTesti(dir) {
+         const testiTotal = getTestiTotal();
+         if (!testiTotal) return;
          testiCurrent += dir;
          if (testiCurrent < 0) testiCurrent = testiTotal - 1;
          if (testiCurrent >= testiTotal) testiCurrent = 0;
@@ -407,7 +389,7 @@
      updateTestiSlider();
 
      // ===== Submit Testimonial via AJAX =====
-     document.getElementById('testi-form').addEventListener('submit', function(e) {
+     document.getElementById('testi-form')?.addEventListener('submit', function(e) {
          e.preventDefault();
 
          const form = this;
@@ -423,8 +405,8 @@
          // Collect form data
          const formData = new FormData(form);
          const name = formData.get('name');
-         const jobTitle = formData.get('job_title');
-         const company = formData.get('company');
+         const jobTitle = formData.get('job');
+         const company = formData.get('role');
          const message = formData.get('message');
 
          // Send to Laravel backend
@@ -519,7 +501,7 @@
 
 
 
-     document.getElementById('reservation-form').addEventListener('submit', function(e) {
+     document.getElementById('reservation-form')?.addEventListener('submit', function(e) {
          e.preventDefault();
 
          const form = this;
@@ -576,11 +558,15 @@
                  const toastText = document.getElementById('toast-text');
 
                  toastText.textContent = error.message || 'حدث خطأ';
-                 toast.classList.remove('hidden');
+                 toast.classList.add('show');
 
                  setTimeout(() => {
-                     toast.classList.add('hidden');
+                     toast.classList.remove('show');
                  }, 3000);
+             })
+             .finally(() => {
+                 btn.disabled = false;
+                 btn.innerHTML = btnHTML;
              });
      });
  </script>

@@ -228,13 +228,15 @@ $image = $heroImage?->path
             <h2 class="reveal reveal-delay-1 font-serif text-3xl md:text-5xl font-bold text-warm-900 mt-4">قصص <span class="text-terracotta">حقيقية</span></h2>
         </div>
 
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-stretch">
+
         <!-- Slider -->
-        <div class="reveal relative mb-20">
-            <div id="testi-slider" class="overflow-hidden rounded-3xl">
-                <div id="testi-track" class="flex transition-transform duration-700 ease-out">
+        <div class="reveal relative lg:col-span-3 min-w-0 flex flex-col">
+            <div id="testi-slider" class="overflow-hidden rounded-2xl flex-1">
+                <div id="testi-track" class="flex h-full transition-transform duration-700 ease-out">
                     <!-- Slide 1 -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="bg-ivory/70 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-14 md:flex md:items-start md:gap-12">
+                    <div class="w-full h-full flex-shrink-0">
+                        <div class="h-full min-h-[520px] bg-white border border-sand rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-center md:items-center md:gap-10">
                             <div class="md:flex-shrink-0 mb-6 md:mb-0 text-center md:text-right">
                                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 font-serif text-3xl md:text-4xl font-bold mx-auto md:mx-0">ع</div>
                                 <div class="mt-4 hidden md:block">
@@ -252,8 +254,8 @@ $image = $heroImage?->path
                         </div>
                     </div>
                     <!-- Slide 2 -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="bg-ivory/70 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-14 md:flex md:items-start md:gap-12">
+                    <div class="w-full h-full flex-shrink-0">
+                        <div class="h-full min-h-[520px] bg-white border border-sand rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-center md:items-center md:gap-10">
                             <div class="md:flex-shrink-0 mb-6 md:mb-0 text-center md:text-right">
                                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-terracotta/10 flex items-center justify-center text-terracotta font-serif text-3xl md:text-4xl font-bold mx-auto md:mx-0">م</div>
                                 <div class="mt-4 hidden md:block">
@@ -271,8 +273,8 @@ $image = $heroImage?->path
                         </div>
                     </div>
                     <!-- Slide 3 -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="bg-ivory/70 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-14 md:flex md:items-start md:gap-12">
+                    <div class="w-full h-full flex-shrink-0">
+                        <div class="h-full min-h-[520px] bg-white border border-sand rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-center md:items-center md:gap-10">
                             <div class="md:flex-shrink-0 mb-6 md:mb-0 text-center md:text-right">
                                 <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue font-serif text-3xl md:text-4xl font-bold mx-auto md:mx-0">ف</div>
                                 <div class="mt-4 hidden md:block">
@@ -292,8 +294,8 @@ $image = $heroImage?->path
                 </div>
             </div>
             <!-- Navigation Arrows -->
-            <button onclick="slideTesti(-1)" class="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-6 w-12 h-12 rounded-full bg-ivory/80 backdrop-blur-sm border border-sand shadow-lg flex items-center justify-center text-warm-600 hover:bg-terracotta hover:text-ivory hover:border-terracotta transition-all z-10"><i class="fas fa-chevron-right text-sm"></i></button>
-            <button onclick="slideTesti(1)" class="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-6 w-12 h-12 rounded-full bg-ivory/80 backdrop-blur-sm border border-sand shadow-lg flex items-center justify-center text-warm-600 hover:bg-terracotta hover:text-ivory hover:border-terracotta transition-all z-10"><i class="fas fa-chevron-left text-sm"></i></button>
+            <button onclick="slideTesti(-1)" class="absolute top-1/2 -translate-y-1/2 right-3 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm border border-sand flex items-center justify-center text-warm-600 hover:bg-terracotta hover:text-warm-800 hover:border-terracotta transition-all z-10"><i class="fas fa-chevron-right text-xs"></i></button>
+            <button onclick="slideTesti(1)" class="absolute top-1/2 -translate-y-1/2 left-3 w-10 h-10 rounded-xl bg-white/90 backdrop-blur-sm border border-sand flex items-center justify-center text-warm-600 hover:bg-terracotta hover:text-warm-800 hover:border-terracotta transition-all z-10"><i class="fas fa-chevron-left text-xs"></i></button>
             <!-- Dots -->
             <div id="testi-dots" class="flex justify-center gap-2 mt-8">
                 <button onclick="goToSlide(0)" class="testi-dot w-3 h-3 rounded-full bg-terracotta transition-all"></button>
@@ -303,12 +305,12 @@ $image = $heroImage?->path
         </div>
 
         <!-- Submission Form -->
-        <div class="reveal max-w-2xl mx-auto">
-            <div class="text-center mb-10">
+        <div class="reveal lg:col-span-2 flex flex-col">
+            <div class="text-right mb-6">
                 <span class="text-olive-600 text-sm font-bold tracking-[0.15em]">شاركنا رأيك</span>
                 <h3 class="font-serif text-2xl md:text-3xl font-bold text-warm-900 mt-3">تجربتك تهمنا</h3>
             </div>
-            <form id="testi-form" action="{{ route('testimonials.store') }}" method="POST" class="contact-bg-form bg-ivory/80 backdrop-blur-md border border-sand/50 rounded-2xl p-8 md:p-10 space-y-5 shadow-xl">
+            <form id="testi-form" action="{{ route('testimonials.store') }}" method="POST" class="contact-bg-form bg-white border border-sand rounded-2xl p-7 md:p-8 space-y-5 flex-1">
                 @csrf
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -329,10 +331,11 @@ $image = $heroImage?->path
                     <textarea name="message" rows="4" required placeholder="شاركنا تجربتك مع Brix..." class="w-full px-4 py-3 rounded-xl border border-sand bg-cream/70 text-sm focus:border-terracotta outline-none transition-all resize-none"></textarea>
                 </div>
                 <!-- Submit Button -->
-                <button type="submit" class="w-full py-4 bg-terracotta text-ivory font-bold rounded-full hover:bg-warm-800 transition-all duration-300 flex items-center justify-center gap-2">
+                <button type="submit" class="w-full py-4 bg-terracotta text-ivory font-semibold rounded-xl hover:bg-olive-800 transition-all duration-300 flex items-center justify-center gap-2">
                     <i class="fas fa-paper-plane text-sm"></i> أرسل شهادتك
                 </button>
             </form>
+        </div>
         </div>
     </div>
 </section>

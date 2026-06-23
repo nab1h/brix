@@ -109,10 +109,16 @@ class ReservationController extends Controller
         $ownerEmail = config('mail.MAIL_OWNER', 'avora.fun.eg@gmail.com');
         Mail::to($ownerEmail)->send(new ReservationMail($reservation));
 
-        return response()->json([
-            'success' => true,
-            'message' => 'تم إضافة الحجز بنجاح!'
-        ]);
+        $message = 'تم إرسال طلب عرض السعر بنجاح!';
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => $message,
+            ]);
+        }
+
+        return redirect()->back()->with('status', $message);
     }
 
     // =========================
