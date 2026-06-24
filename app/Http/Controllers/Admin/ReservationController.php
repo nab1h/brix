@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Mail\ReservationMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Category;
+use Illuminate\Validation\Rule;
 
 class ReservationController extends Controller
 {
@@ -79,21 +81,47 @@ class ReservationController extends Controller
     // =========================
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate(['category_id' => 'required|exists:categories,id']);
+        $category = Category::with('specifications')->findOrFail($request->input('category_id'));
+
+        $rules = [
             'name'     => 'required|string|max:255',
             'phone'    => 'required|string|max:20',
-            'email'    => 'nullable|email|max:255',
+            'email'    => 'required|email|max:255',
             'brand'    => 'nullable|string|max:255',
-            'category' => 'nullable|string|max:255',
-            'product_length' => 'required|numeric|min:0.1|max:99999',
-            'product_width'  => 'required|numeric|min:0.1|max:99999',
-            'product_height' => 'required|numeric|min:0.1|max:99999',
-            'paper_weight'   => 'required|integer|in:300,320,350,400',
-            'material'       => 'required|string|in:بريستول,كوشيه,فنلندي الشجرة',
-            'quantity'       => 'required|integer|min:1000|max:100000000',
+            'category_id' => 'required|exists:categories,id',
+            'specifications' => 'nullable|array',
             'brand_logo'     => 'nullable|image|mimes:jpeg,png,jpg,webp|max:5120',
             'notes'    => 'nullable|string',
-        ]);
+        ];
+
+        $attributes = [];
+        foreach ($category->specifications as $field) {
+            $fieldRules = [$field->is_required ? 'required' : 'nullable'];
+            $fieldRules[] = $field->type === 'number' ? 'numeric' : 'string';
+            if ($field->type === 'number') {
+                $fieldRules[] = 'max:999999999';
+            } else {
+                $fieldRules[] = 'max:5000';
+            }
+            if ($field->type === 'select') {
+                $fieldRules[] = Rule::in($field->options ?? []);
+            }
+            $rules['specifications.' . $field->id] = $fieldRules;
+            $attributes['specifications.' . $field->id] = $field->label;
+        }
+
+        $validated = $request->validate($rules, [], $attributes);
+        $answers = $validated['specifications'] ?? [];
+        $validated['category'] = $category->name;
+        $validated['specifications'] = $category->specifications
+            ->filter(fn ($field) => array_key_exists((string) $field->id, $answers) && $answers[$field->id] !== null && $answers[$field->id] !== '')
+            ->map(fn ($field) => [
+                'field_id' => $field->id,
+                'label' => $field->label,
+                'value' => $answers[$field->id],
+                'unit' => $field->unit,
+            ])->values()->all();
 
         if ($request->hasFile('brand_logo')) {
             $validated['brand_logo'] = $request->file('brand_logo')->store('reservation-logos', 'public');

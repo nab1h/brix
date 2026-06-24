@@ -46,18 +46,12 @@
                                     <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">نوع الخدمة:</td>
                                     <td style="padding: 12px 15px; color: #111827; font-size: 16px; font-weight: bold; border-top: 1px solid #e5e7eb;">{{ $reservation->category }}</td>
                                 </tr>
+                                @foreach($reservation->display_specifications as $specification)
                                 <tr>
-                                    <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">المقاسات:</td>
-                                    <td style="padding: 12px 15px; color: #111827; font-size: 16px; font-weight: bold; border-top: 1px solid #e5e7eb;">{{ $reservation->product_length }} × {{ $reservation->product_width }} × {{ $reservation->product_height }} سم</td>
+                                    <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">{{ $specification['label'] }}:</td>
+                                    <td style="padding: 12px 15px; color: #111827; font-size: 16px; font-weight: bold; border-top: 1px solid #e5e7eb;">{{ $specification['value'] }}{{ !empty($specification['unit']) ? ' '.$specification['unit'] : '' }}</td>
                                 </tr>
-                                <tr>
-                                    <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">الوزن والخامة:</td>
-                                    <td style="padding: 12px 15px; color: #111827; font-size: 16px; font-weight: bold; border-top: 1px solid #e5e7eb;">{{ $reservation->paper_weight }} جرام — {{ $reservation->material }}</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">الكمية:</td>
-                                    <td style="padding: 12px 15px; color: #111827; font-size: 16px; font-weight: bold; border-top: 1px solid #e5e7eb;">{{ number_format($reservation->quantity) }} قطعة</td>
-                                </tr>
+                                @endforeach
                                 @if($reservation->brand_logo)
                                 <tr>
                                     <td style="padding: 12px 15px; color: #6b7280; font-size: 14px; border-top: 1px solid #e5e7eb;">لوجو البراند:</td>

@@ -139,10 +139,12 @@
                                     @endif
                                 </td>
 
-                                <td class="px-6 py-4 text-xs text-gray-600 whitespace-nowrap leading-6">
-                                    <span class="block">{{ $reservation->product_length }} × {{ $reservation->product_width }} × {{ $reservation->product_height }} سم</span>
-                                    <span class="block">{{ $reservation->paper_weight }} جرام — {{ $reservation->material }}</span>
-                                    <span class="block font-semibold text-gray-800">{{ number_format($reservation->quantity ?? 0) }} قطعة</span>
+                                <td class="px-6 py-4 text-xs text-gray-600 min-w-[190px] leading-6">
+                                    @forelse($reservation->display_specifications as $specification)
+                                        <span class="block"><strong class="text-gray-800">{{ $specification['label'] }}:</strong> {{ $specification['value'] }}{{ !empty($specification['unit']) ? ' '.$specification['unit'] : '' }}</span>
+                                    @empty
+                                        <span class="text-gray-400">لا توجد مواصفات</span>
+                                    @endforelse
                                 </td>
 
                                 <td class="px-6 py-4">

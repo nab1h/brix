@@ -410,9 +410,6 @@ $image = $heroImage?->path
 </section>
 
 
-<!-- QUOTE -->
-@include('includes.quote')
-
 <!-- CONTACT -->
 @include('includes.contact')
 

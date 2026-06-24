@@ -84,6 +84,9 @@
                                 <td class="px-6 py-4 text-center">
                                     <div class="flex justify-center gap-2 items-center flex-wrap">
                                         <!-- Edit -->
+                                        <a href="{{ route('admin.categories.specifications.index', $category) }}" class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 hover:bg-emerald-600 hover:text-white transition" title="مواصفات نموذج السعر">
+                                            <i class="fas fa-list-check text-xs"></i>
+                                        </a>
                                         <a href="{{ route('admin.categories.edit', $category->id) }}" class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition" title="تعديل">
                                             <i class="fas fa-pen text-xs"></i>
                                         </a>

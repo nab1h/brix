@@ -17,6 +17,7 @@ use App\Http\Controllers\StatisticController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\HomeContentController;
+use App\Http\Controllers\Admin\CategorySpecificationController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
@@ -80,6 +81,12 @@ Route::middleware('auth')->group(
             Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
                 Route::resource('brands', BrandController::class);
                 Route::resource('categories', CategoryController::class);
+                Route::get('categories/{category}/specifications', [CategorySpecificationController::class, 'index'])->name('categories.specifications.index');
+                Route::get('categories/{category}/specifications/create', [CategorySpecificationController::class, 'create'])->name('categories.specifications.create');
+                Route::post('categories/{category}/specifications', [CategorySpecificationController::class, 'store'])->name('categories.specifications.store');
+                Route::get('specifications/{specification}/edit', [CategorySpecificationController::class, 'edit'])->name('specifications.edit');
+                Route::put('specifications/{specification}', [CategorySpecificationController::class, 'update'])->name('specifications.update');
+                Route::delete('specifications/{specification}', [CategorySpecificationController::class, 'destroy'])->name('specifications.destroy');
                 Route::resource('portfolios', PortfolioController::class);
                 Route::resource('contacts', ContactController::class)->except(['create', 'edit', 'update', 'show']);
                 Route::get('contacts/{contact}/read', [ContactController::class, 'markAsRead'])->name('contacts.read');

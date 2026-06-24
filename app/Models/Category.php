@@ -18,4 +18,9 @@ class Category extends Model
     {
         return $this->hasMany(Portfolio::class, 'cat_id');
     }
+
+    public function specifications()
+    {
+        return $this->hasMany(CategorySpecification::class)->orderBy('sort_order')->orderBy('id');
+    }
 }
